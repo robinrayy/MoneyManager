@@ -41,15 +41,15 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportGraphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblIncome = new System.Windows.Forms.Label();
-            this.lblExpense = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblExpense = new System.Windows.Forms.Label();
+            this.lblIncome = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -87,31 +87,31 @@
             this.expenseToolStripMenuItem,
             this.incomeToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // expenseToolStripMenuItem
             // 
             this.expenseToolStripMenuItem.Name = "expenseToolStripMenuItem";
-            this.expenseToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.expenseToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
             this.expenseToolStripMenuItem.Text = "Expense";
             // 
             // incomeToolStripMenuItem
             // 
             this.incomeToolStripMenuItem.Name = "incomeToolStripMenuItem";
-            this.incomeToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.incomeToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
             this.incomeToolStripMenuItem.Text = "Income";
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.editToolStripMenuItem.Text = "Edit ";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // accountToolStripMenuItem
@@ -126,13 +126,13 @@
             // changePassToolStripMenuItem
             // 
             this.changePassToolStripMenuItem.Name = "changePassToolStripMenuItem";
-            this.changePassToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.changePassToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
             this.changePassToolStripMenuItem.Text = "Change Password";
             // 
             // manageProfileToolStripMenuItem
             // 
             this.manageProfileToolStripMenuItem.Name = "manageProfileToolStripMenuItem";
-            this.manageProfileToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.manageProfileToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
             this.manageProfileToolStripMenuItem.Text = "Manage Profile";
             // 
             // viewToolStripMenuItem
@@ -146,7 +146,7 @@
             // reportGraphToolStripMenuItem
             // 
             this.reportGraphToolStripMenuItem.Name = "reportGraphToolStripMenuItem";
-            this.reportGraphToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.reportGraphToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
             this.reportGraphToolStripMenuItem.Text = "Report  (Graph)";
             // 
             // splitContainer1
@@ -174,73 +174,14 @@
             this.splitContainer1.SplitterDistance = 152;
             this.splitContainer1.TabIndex = 1;
             // 
-            // dataGridView1
+            // comboBox1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(935, 353);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // lblIncome
-            // 
-            this.lblIncome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblIncome.Font = new System.Drawing.Font("Papyrus", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIncome.Location = new System.Drawing.Point(0, 0);
-            this.lblIncome.Name = "lblIncome";
-            this.lblIncome.Size = new System.Drawing.Size(935, 42);
-            this.lblIncome.TabIndex = 1;
-            this.lblIncome.Text = "Income : ";
-            // 
-            // lblExpense
-            // 
-            this.lblExpense.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblExpense.Font = new System.Drawing.Font("Papyrus", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpense.Location = new System.Drawing.Point(0, 42);
-            this.lblExpense.Name = "lblExpense";
-            this.lblExpense.Size = new System.Drawing.Size(935, 42);
-            this.lblExpense.TabIndex = 2;
-            this.lblExpense.Text = "Expense : ";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTotal.Font = new System.Drawing.Font("Papyrus", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(0, 84);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(935, 42);
-            this.lblTotal.TabIndex = 3;
-            this.lblTotal.Text = "Account Balance : ";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dateTimePicker1.Location = new System.Drawing.Point(735, 126);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 4;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radioButton2.Location = new System.Drawing.Point(577, 126);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(158, 26);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.Text = "By Specified Date : ";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Location = new System.Drawing.Point(0, 126);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Filter Methods : ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(212, 126);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 10;
             // 
             // radioButton1
             // 
@@ -252,14 +193,73 @@
             this.radioButton1.Text = "By Month : ";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // label1
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(212, 126);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 10;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Location = new System.Drawing.Point(0, 126);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 26);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Filter Methods : ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.radioButton2.Location = new System.Drawing.Point(577, 126);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(158, 26);
+            this.radioButton2.TabIndex = 7;
+            this.radioButton2.Text = "By Specified Date : ";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dateTimePicker1.Location = new System.Drawing.Point(735, 126);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 4;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTotal.Font = new System.Drawing.Font("Papyrus", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(0, 84);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(935, 42);
+            this.lblTotal.TabIndex = 3;
+            this.lblTotal.Text = "Account Balance : ";
+            // 
+            // lblExpense
+            // 
+            this.lblExpense.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblExpense.Font = new System.Drawing.Font("Papyrus", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpense.Location = new System.Drawing.Point(0, 42);
+            this.lblExpense.Name = "lblExpense";
+            this.lblExpense.Size = new System.Drawing.Size(935, 42);
+            this.lblExpense.TabIndex = 2;
+            this.lblExpense.Text = "Expense : ";
+            // 
+            // lblIncome
+            // 
+            this.lblIncome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblIncome.Font = new System.Drawing.Font("Papyrus", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIncome.Location = new System.Drawing.Point(0, 0);
+            this.lblIncome.Name = "lblIncome";
+            this.lblIncome.Size = new System.Drawing.Size(935, 42);
+            this.lblIncome.TabIndex = 1;
+            this.lblIncome.Text = "Income     : ";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(935, 353);
+            this.dataGridView1.TabIndex = 0;
             // 
             // FrmMainMenu
             // 
