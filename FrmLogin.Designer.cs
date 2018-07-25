@@ -76,7 +76,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtId.Location = new System.Drawing.Point(111, 117);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(300, 22);
+            this.txtId.Size = new System.Drawing.Size(295, 22);
             this.txtId.TabIndex = 89;
             // 
             // txtPass
@@ -85,7 +85,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPass.Location = new System.Drawing.Point(111, 146);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(300, 22);
+            this.txtPass.Size = new System.Drawing.Size(295, 22);
             this.txtPass.TabIndex = 90;
             // 
             // btnLogin
@@ -97,7 +97,7 @@
             this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogin.Location = new System.Drawing.Point(169, 176);
+            this.btnLogin.Location = new System.Drawing.Point(166, 176);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 91;
@@ -110,7 +110,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.Silver;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.Location = new System.Drawing.Point(250, 176);
+            this.btnCancel.Location = new System.Drawing.Point(247, 176);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(76, 23);
             this.btnCancel.TabIndex = 92;
@@ -123,7 +123,7 @@
             this.linklblSignUp.AutoSize = true;
             this.linklblSignUp.BackColor = System.Drawing.Color.Transparent;
             this.linklblSignUp.DisabledLinkColor = System.Drawing.Color.Transparent;
-            this.linklblSignUp.Location = new System.Drawing.Point(269, 207);
+            this.linklblSignUp.Location = new System.Drawing.Point(266, 207);
             this.linklblSignUp.Name = "linklblSignUp";
             this.linklblSignUp.Size = new System.Drawing.Size(60, 17);
             this.linklblSignUp.TabIndex = 93;
@@ -137,7 +137,7 @@
             this.linklblForgotPassword.AutoSize = true;
             this.linklblForgotPassword.BackColor = System.Drawing.Color.Transparent;
             this.linklblForgotPassword.DisabledLinkColor = System.Drawing.Color.Transparent;
-            this.linklblForgotPassword.Location = new System.Drawing.Point(417, 136);
+            this.linklblForgotPassword.Location = new System.Drawing.Point(414, 149);
             this.linklblForgotPassword.Name = "linklblForgotPassword";
             this.linklblForgotPassword.Size = new System.Drawing.Size(121, 17);
             this.linklblForgotPassword.TabIndex = 94;
@@ -157,7 +157,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(149, 207);
+            this.label5.Location = new System.Drawing.Point(146, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 17);
             this.label5.TabIndex = 96;
@@ -169,7 +169,7 @@
             this.label6.Font = new System.Drawing.Font("Ravie", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(540, 81);
+            this.label6.Size = new System.Drawing.Size(535, 81);
             this.label6.TabIndex = 97;
             this.label6.Text = "E&&I";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -180,7 +180,7 @@
             this.label7.Font = new System.Drawing.Font("Ravie", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(0, 81);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(540, 19);
+            this.label7.Size = new System.Drawing.Size(535, 19);
             this.label7.TabIndex = 98;
             this.label7.Text = "Your Worthy Money Manager";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -189,7 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 240);
+            this.ClientSize = new System.Drawing.Size(535, 240);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);

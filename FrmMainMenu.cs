@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace MoneyManager
 {
-    public partial class FormMainMenu : Form
+    public partial class FrmMainMenu : Form
     {
-        public FormMainMenu()
+        public FrmMainMenu()
         {
             InitializeComponent();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
