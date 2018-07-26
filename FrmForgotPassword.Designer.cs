@@ -34,14 +34,14 @@
             this.Lbl_Question = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblQuestion = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblAnswer = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.radioButtonEmail = new System.Windows.Forms.RadioButton();
             this.radioButtonID = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblEmailDesc = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -77,6 +77,7 @@
             // 
             // txtAnswer
             // 
+            this.txtAnswer.Enabled = false;
             this.txtAnswer.Location = new System.Drawing.Point(96, 217);
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(310, 22);
@@ -85,6 +86,7 @@
             // Lbl_Question
             // 
             this.Lbl_Question.AutoSize = true;
+            this.Lbl_Question.Enabled = false;
             this.Lbl_Question.Location = new System.Drawing.Point(12, 197);
             this.Lbl_Question.Name = "Lbl_Question";
             this.Lbl_Question.Size = new System.Drawing.Size(77, 17);
@@ -93,6 +95,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(95, 172);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(234, 22);
@@ -101,20 +104,22 @@
             // lblQuestion
             // 
             this.lblQuestion.AutoSize = true;
+            this.lblQuestion.Enabled = false;
             this.lblQuestion.Location = new System.Drawing.Point(85, 197);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(177, 17);
             this.lblQuestion.TabIndex = 35;
             this.lblQuestion.Text = " {question that were typed}";
             // 
-            // label2
+            // lblAnswer
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 220);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 17);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "Answer    : ";
+            this.lblAnswer.AutoSize = true;
+            this.lblAnswer.Enabled = false;
+            this.lblAnswer.Location = new System.Drawing.Point(12, 220);
+            this.lblAnswer.Name = "lblAnswer";
+            this.lblAnswer.Size = new System.Drawing.Size(78, 17);
+            this.lblAnswer.TabIndex = 36;
+            this.lblAnswer.Text = "Answer    : ";
             // 
             // label3
             // 
@@ -125,23 +130,25 @@
             this.label3.TabIndex = 37;
             this.label3.Text = "Your new password will be sent to your confirmed email.";
             // 
-            // label4
+            // lblEmail
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 69);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 17);
-            this.label4.TabIndex = 38;
-            this.label4.Text = "Email     : ";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Enabled = false;
+            this.lblEmail.Location = new System.Drawing.Point(12, 69);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(70, 17);
+            this.lblEmail.TabIndex = 38;
+            this.lblEmail.Text = "Email     : ";
             // 
-            // label5
+            // lblID
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 175);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 17);
-            this.label5.TabIndex = 39;
-            this.label5.Text = "ID            : ";
+            this.lblID.AutoSize = true;
+            this.lblID.Enabled = false;
+            this.lblID.Location = new System.Drawing.Point(12, 175);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(77, 17);
+            this.lblID.TabIndex = 39;
+            this.lblID.Text = "ID            : ";
             // 
             // label6
             // 
@@ -165,6 +172,7 @@
             this.radioButtonEmail.TabStop = true;
             this.radioButtonEmail.Text = "By Email";
             this.radioButtonEmail.UseVisualStyleBackColor = true;
+            this.radioButtonEmail.CheckedChanged += new System.EventHandler(this.radioButtonEmail_CheckedChanged);
             // 
             // radioButtonID
             // 
@@ -176,18 +184,21 @@
             this.radioButtonID.TabStop = true;
             this.radioButtonID.Text = "By ID (Question you typed when you registered) :";
             this.radioButtonID.UseVisualStyleBackColor = true;
+            this.radioButtonID.CheckedChanged += new System.EventHandler(this.radioButtonID_CheckedChanged);
             // 
-            // label7
+            // lblEmailDesc
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 91);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(359, 17);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "Your new password will be sent to your confirmed email.";
+            this.lblEmailDesc.AutoSize = true;
+            this.lblEmailDesc.Enabled = false;
+            this.lblEmailDesc.Location = new System.Drawing.Point(12, 91);
+            this.lblEmailDesc.Name = "lblEmailDesc";
+            this.lblEmailDesc.Size = new System.Drawing.Size(359, 17);
+            this.lblEmailDesc.TabIndex = 37;
+            this.lblEmailDesc.Text = "Your new password will be sent to your confirmed email.";
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Location = new System.Drawing.Point(96, 66);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(234, 22);
@@ -202,11 +213,11 @@
             this.Controls.Add(this.radioButtonID);
             this.Controls.Add(this.radioButtonEmail);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblEmailDesc);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblAnswer);
             this.Controls.Add(this.lblQuestion);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnCancel);
@@ -231,14 +242,14 @@
         private System.Windows.Forms.Label Lbl_Question;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblQuestion;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblAnswer;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton radioButtonEmail;
         private System.Windows.Forms.RadioButton radioButtonID;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblEmailDesc;
         private System.Windows.Forms.TextBox txtEmail;
     }
 }

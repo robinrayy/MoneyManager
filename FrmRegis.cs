@@ -26,19 +26,24 @@ namespace MoneyManager
         {
             if (checkboxSafetyQuestion.Checked == true)
             {
-                lblQuestion.ForeColor = Color.Black;
-                lblAnswer.ForeColor = Color.Black;
-                lblQestionMark.ForeColor = Color.Black;
+                lblQuestion.Enabled = true;
+                lblAnswer.Enabled = true;
+                lblQestionMark.Enabled = true;
                 txtQuestion.Enabled = true;
                 txtAnswer.Enabled = true;
             }
             else {
-                lblQuestion.ForeColor = Color.Gray;
-                lblAnswer.ForeColor = Color.Gray;
-                lblQestionMark.ForeColor = Color.Gray;
+                lblQuestion.Enabled = false;
+                lblAnswer.Enabled = false ;
+                lblQestionMark.Enabled = false ;
                 txtQuestion.Enabled = false;
                 txtAnswer.Enabled = false;
             }
+        }
+
+        private void FrmRegis_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

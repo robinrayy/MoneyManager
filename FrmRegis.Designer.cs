@@ -102,7 +102,8 @@
             // 
             this.lblQestionMark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblQestionMark.AutoSize = true;
-            this.lblQestionMark.ForeColor = System.Drawing.Color.Gray;
+            this.lblQestionMark.Enabled = false;
+            this.lblQestionMark.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblQestionMark.Location = new System.Drawing.Point(534, 310);
             this.lblQestionMark.Name = "lblQestionMark";
             this.lblQestionMark.Size = new System.Drawing.Size(16, 17);
@@ -132,7 +133,8 @@
             // lblAnswer
             // 
             this.lblAnswer.AutoSize = true;
-            this.lblAnswer.ForeColor = System.Drawing.Color.Gray;
+            this.lblAnswer.Enabled = false;
+            this.lblAnswer.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblAnswer.Location = new System.Drawing.Point(9, 333);
             this.lblAnswer.Name = "lblAnswer";
             this.lblAnswer.Size = new System.Drawing.Size(122, 17);
@@ -142,7 +144,8 @@
             // lblQuestion
             // 
             this.lblQuestion.AutoSize = true;
-            this.lblQuestion.ForeColor = System.Drawing.Color.Gray;
+            this.lblQuestion.Enabled = false;
+            this.lblQuestion.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblQuestion.Location = new System.Drawing.Point(9, 306);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(121, 17);
@@ -436,6 +439,7 @@
             this.Name = "FrmRegis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration Page";
+            this.Load += new System.EventHandler(this.FrmRegis_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

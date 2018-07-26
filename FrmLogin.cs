@@ -23,5 +23,12 @@ namespace MoneyManager
             new FrmRegis().ShowDialog();
             Show();
         }
+
+        private void linklblForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Hide();
+            new FrmForgotPassword().ShowDialog();
+            Show();
+        }
     }
 }
