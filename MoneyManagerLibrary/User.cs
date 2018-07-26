@@ -10,11 +10,19 @@ namespace MoneyManagerLibrary
     {
         public string ID { get; set; }
         public string  Nama { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public string Question { get; set; }
+        public string Answer { get; set; }
 
-        public User(string id, string nama)
+        public User(string id, string nama, string pass, string email, string question = null, string ans = null)
         {
             ID = id;
             Nama = nama;
+            Password = pass;
+            Email = email;
+            Question = question;
+            Answer = ans;
         }
     }
 }

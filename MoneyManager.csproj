@@ -82,11 +82,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangePassword.Designer.cs">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmForgotPassword.Designer.cs">
       <DependentUpon>FrmForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGraph.Designer.cs">
+      <DependentUpon>FrmGraph.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -100,6 +112,12 @@
     <Compile Include="FrmMainMenu.Designer.cs">
       <DependentUpon>FrmMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmManageProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManageProfile.Designer.cs">
+      <DependentUpon>FrmManageProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,14 +126,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmChangePassword.resx">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmForgotPassword.resx">
       <DependentUpon>FrmForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGraph.resx">
+      <DependentUpon>FrmGraph.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMainMenu.resx">
       <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManageProfile.resx">
+      <DependentUpon>FrmManageProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegis.resx">
       <DependentUpon>FrmRegis.cs</DependentUpon>
