@@ -32,15 +32,15 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.incomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportGraphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.balanceChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,16 +67,14 @@
             this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(935, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(873, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.deleteToolStripMenuItem});
+            this.addToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
@@ -84,61 +82,36 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.expenseToolStripMenuItem,
-            this.incomeToolStripMenuItem});
+            this.expenseToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // expenseToolStripMenuItem
             // 
             this.expenseToolStripMenuItem.Name = "expenseToolStripMenuItem";
-            this.expenseToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
-            this.expenseToolStripMenuItem.Text = "Expense";
-            // 
-            // incomeToolStripMenuItem
-            // 
-            this.incomeToolStripMenuItem.Name = "incomeToolStripMenuItem";
-            this.incomeToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
-            this.incomeToolStripMenuItem.Text = "Income";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
-            this.editToolStripMenuItem.Text = "Edit ";
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
-            this.deleteToolStripMenuItem.Text = "Delete";
+            this.expenseToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.expenseToolStripMenuItem.Text = "Transaction";
             // 
             // accountToolStripMenuItem
             // 
             this.accountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changePassToolStripMenuItem,
             this.manageProfileToolStripMenuItem});
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
             this.accountToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.accountToolStripMenuItem.Text = "Account";
             // 
-            // changePassToolStripMenuItem
-            // 
-            this.changePassToolStripMenuItem.Name = "changePassToolStripMenuItem";
-            this.changePassToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
-            this.changePassToolStripMenuItem.Text = "Change Password";
-            // 
             // manageProfileToolStripMenuItem
             // 
             this.manageProfileToolStripMenuItem.Name = "manageProfileToolStripMenuItem";
-            this.manageProfileToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
+            this.manageProfileToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.manageProfileToolStripMenuItem.Text = "Manage Profile";
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reportGraphToolStripMenuItem});
+            this.reportGraphToolStripMenuItem,
+            this.balanceChartToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.viewToolStripMenuItem.Text = "View";
@@ -146,8 +119,15 @@
             // reportGraphToolStripMenuItem
             // 
             this.reportGraphToolStripMenuItem.Name = "reportGraphToolStripMenuItem";
-            this.reportGraphToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
-            this.reportGraphToolStripMenuItem.Text = "Report  (Graph)";
+            this.reportGraphToolStripMenuItem.Size = new System.Drawing.Size(314, 26);
+            this.reportGraphToolStripMenuItem.Text = "Income && Expense Report  (Graph)";
+            this.reportGraphToolStripMenuItem.Click += new System.EventHandler(this.reportGraphToolStripMenuItem_Click);
+            // 
+            // balanceChartToolStripMenuItem
+            // 
+            this.balanceChartToolStripMenuItem.Name = "balanceChartToolStripMenuItem";
+            this.balanceChartToolStripMenuItem.Size = new System.Drawing.Size(314, 26);
+            this.balanceChartToolStripMenuItem.Text = "Balance Chart";
             // 
             // splitContainer1
             // 
@@ -158,6 +138,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnDelete);
+            this.splitContainer1.Panel1.Controls.Add(this.btnEdit);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.radioButton1);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
@@ -170,9 +153,39 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(935, 509);
-            this.splitContainer1.SplitterDistance = 152;
+            this.splitContainer1.Size = new System.Drawing.Size(873, 514);
+            this.splitContainer1.SplitterDistance = 153;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(763, 87);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 36);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Log Out";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(763, 45);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(98, 36);
+            this.btnDelete.TabIndex = 11;
+            this.btnDelete.Text = "Delete Row";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.Location = new System.Drawing.Point(763, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(98, 36);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "Edit Row";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -188,7 +201,7 @@
             this.radioButton1.Dock = System.Windows.Forms.DockStyle.Left;
             this.radioButton1.Location = new System.Drawing.Point(109, 126);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(103, 26);
+            this.radioButton1.Size = new System.Drawing.Size(103, 27);
             this.radioButton1.TabIndex = 9;
             this.radioButton1.Text = "By Month : ";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -198,7 +211,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 126);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 26);
+            this.label1.Size = new System.Drawing.Size(109, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Filter Methods : ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -206,9 +219,9 @@
             // radioButton2
             // 
             this.radioButton2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radioButton2.Location = new System.Drawing.Point(577, 126);
+            this.radioButton2.Location = new System.Drawing.Point(515, 126);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(158, 26);
+            this.radioButton2.Size = new System.Drawing.Size(158, 27);
             this.radioButton2.TabIndex = 7;
             this.radioButton2.Text = "By Specified Date : ";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -216,7 +229,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dateTimePicker1.Location = new System.Drawing.Point(735, 126);
+            this.dateTimePicker1.Location = new System.Drawing.Point(673, 126);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 4;
@@ -227,7 +240,7 @@
             this.lblTotal.Font = new System.Drawing.Font("Papyrus", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.Location = new System.Drawing.Point(0, 84);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(935, 42);
+            this.lblTotal.Size = new System.Drawing.Size(873, 42);
             this.lblTotal.TabIndex = 3;
             this.lblTotal.Text = "Account Balance : ";
             // 
@@ -237,7 +250,7 @@
             this.lblExpense.Font = new System.Drawing.Font("Papyrus", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpense.Location = new System.Drawing.Point(0, 42);
             this.lblExpense.Name = "lblExpense";
-            this.lblExpense.Size = new System.Drawing.Size(935, 42);
+            this.lblExpense.Size = new System.Drawing.Size(873, 42);
             this.lblExpense.TabIndex = 2;
             this.lblExpense.Text = "Expense : ";
             // 
@@ -247,7 +260,7 @@
             this.lblIncome.Font = new System.Drawing.Font("Papyrus", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIncome.Location = new System.Drawing.Point(0, 0);
             this.lblIncome.Name = "lblIncome";
-            this.lblIncome.Size = new System.Drawing.Size(935, 42);
+            this.lblIncome.Size = new System.Drawing.Size(873, 42);
             this.lblIncome.TabIndex = 1;
             this.lblIncome.Text = "Income     : ";
             // 
@@ -258,14 +271,14 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(935, 353);
+            this.dataGridView1.Size = new System.Drawing.Size(873, 357);
             this.dataGridView1.TabIndex = 0;
             // 
             // FrmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 537);
+            this.ClientSize = new System.Drawing.Size(873, 542);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -273,6 +286,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmMainMenu";
             this.Text = "FrmMainMenu";
+            this.Load += new System.EventHandler(this.FrmMainMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -291,11 +305,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem expenseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem incomeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changePassToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageProfileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportGraphToolStripMenuItem;
@@ -309,5 +319,9 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.ToolStripMenuItem balanceChartToolStripMenuItem;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button button1;
     }
 }

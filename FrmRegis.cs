@@ -21,5 +21,24 @@ namespace MoneyManager
         {
 
         }
+
+        private void checkboxSafetyQuestion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkboxSafetyQuestion.Checked == true)
+            {
+                lblQuestion.ForeColor = Color.Black;
+                lblAnswer.ForeColor = Color.Black;
+                lblQestionMark.ForeColor = Color.Black;
+                txtQuestion.Enabled = true;
+                txtAnswer.Enabled = true;
+            }
+            else {
+                lblQuestion.ForeColor = Color.Gray;
+                lblAnswer.ForeColor = Color.Gray;
+                lblQestionMark.ForeColor = Color.Gray;
+                txtQuestion.Enabled = false;
+                txtAnswer.Enabled = false;
+            }
+        }
     }
 }

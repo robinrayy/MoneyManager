@@ -32,13 +32,11 @@
             this.Lbl_PassInfo = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblQestionMark = new System.Windows.Forms.Label();
             this.txtAnswer = new System.Windows.Forms.TextBox();
             this.txtQuestion = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblAnswer = new System.Windows.Forms.Label();
+            this.lblQuestion = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -53,11 +51,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtCaptchaAnswer = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblReType = new System.Windows.Forms.Label();
+            this.lblPass = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.checkboxSafetyQuestion = new System.Windows.Forms.CheckBox();
             this.btnCycle = new System.Windows.Forms.Button();
@@ -100,20 +98,22 @@
             this.label17.TabIndex = 57;
             this.label17.Text = "*MIN 6 digit";
             // 
-            // label16
+            // lblQestionMark
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(534, 310);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(16, 17);
-            this.label16.TabIndex = 56;
-            this.label16.Text = "?";
+            this.lblQestionMark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblQestionMark.AutoSize = true;
+            this.lblQestionMark.ForeColor = System.Drawing.Color.Gray;
+            this.lblQestionMark.Location = new System.Drawing.Point(534, 310);
+            this.lblQestionMark.Name = "lblQestionMark";
+            this.lblQestionMark.Size = new System.Drawing.Size(16, 17);
+            this.lblQestionMark.TabIndex = 56;
+            this.lblQestionMark.Text = "?";
             // 
             // txtAnswer
             // 
             this.txtAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAnswer.Enabled = false;
             this.txtAnswer.Location = new System.Drawing.Point(135, 334);
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(395, 22);
@@ -123,46 +123,31 @@
             // 
             this.txtQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQuestion.Enabled = false;
             this.txtQuestion.Location = new System.Drawing.Point(135, 307);
             this.txtQuestion.Name = "txtQuestion";
             this.txtQuestion.Size = new System.Drawing.Size(395, 22);
             this.txtQuestion.TabIndex = 54;
             // 
-            // label14
+            // lblAnswer
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(117, 335);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(12, 17);
-            this.label14.TabIndex = 53;
-            this.label14.Text = ":";
+            this.lblAnswer.AutoSize = true;
+            this.lblAnswer.ForeColor = System.Drawing.Color.Gray;
+            this.lblAnswer.Location = new System.Drawing.Point(9, 333);
+            this.lblAnswer.Name = "lblAnswer";
+            this.lblAnswer.Size = new System.Drawing.Size(122, 17);
+            this.lblAnswer.TabIndex = 51;
+            this.lblAnswer.Text = "Answer                :";
             // 
-            // label15
+            // lblQuestion
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(117, 308);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(12, 17);
-            this.label15.TabIndex = 52;
-            this.label15.Text = ":";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 333);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 17);
-            this.label13.TabIndex = 51;
-            this.label13.Text = "Answer";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 306);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 17);
-            this.label12.TabIndex = 50;
-            this.label12.Text = "Qustion";
+            this.lblQuestion.AutoSize = true;
+            this.lblQuestion.ForeColor = System.Drawing.Color.Gray;
+            this.lblQuestion.Location = new System.Drawing.Point(9, 306);
+            this.lblQuestion.Name = "lblQuestion";
+            this.lblQuestion.Size = new System.Drawing.Size(121, 17);
+            this.lblQuestion.TabIndex = 50;
+            this.lblQuestion.Text = "Qustion               :";
             // 
             // btnCancel
             // 
@@ -170,7 +155,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.Silver;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.Location = new System.Drawing.Point(303, 456);
+            this.btnCancel.Location = new System.Drawing.Point(303, 462);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(71, 32);
             this.btnCancel.TabIndex = 49;
@@ -183,7 +168,7 @@
             this.btnRegister.BackColor = System.Drawing.Color.Silver;
             this.btnRegister.FlatAppearance.BorderSize = 0;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegister.Location = new System.Drawing.Point(207, 456);
+            this.btnRegister.Location = new System.Drawing.Point(207, 462);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(90, 32);
             this.btnRegister.TabIndex = 48;
@@ -283,7 +268,7 @@
             // txtCaptchaAnswer
             // 
             this.txtCaptchaAnswer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCaptchaAnswer.Location = new System.Drawing.Point(207, 428);
+            this.txtCaptchaAnswer.Location = new System.Drawing.Point(207, 434);
             this.txtCaptchaAnswer.Name = "txtCaptchaAnswer";
             this.txtCaptchaAnswer.Size = new System.Drawing.Size(167, 22);
             this.txtCaptchaAnswer.TabIndex = 37;
@@ -292,56 +277,56 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(204, 406);
+            this.label6.Location = new System.Drawing.Point(204, 414);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(152, 17);
             this.label6.TabIndex = 35;
             this.label6.Text = "Write This Text Below :";
             // 
-            // label5
+            // lblEmail
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 236);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 17);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Email";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(9, 236);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(42, 17);
+            this.lblEmail.TabIndex = 34;
+            this.lblEmail.Text = "Email";
             // 
-            // label4
+            // lblReType
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 209);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 17);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Retype Pass";
+            this.lblReType.AutoSize = true;
+            this.lblReType.Location = new System.Drawing.Point(8, 209);
+            this.lblReType.Name = "lblReType";
+            this.lblReType.Size = new System.Drawing.Size(88, 17);
+            this.lblReType.TabIndex = 33;
+            this.lblReType.Text = "Retype Pass";
             // 
-            // label3
+            // lblPass
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 183);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 17);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Password";
+            this.lblPass.AutoSize = true;
+            this.lblPass.Location = new System.Drawing.Point(9, 183);
+            this.lblPass.Name = "lblPass";
+            this.lblPass.Size = new System.Drawing.Size(69, 17);
+            this.lblPass.TabIndex = 32;
+            this.lblPass.Text = "Password";
             // 
-            // label2
+            // lblID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 152);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 17);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "ID";
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(9, 152);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(21, 17);
+            this.lblID.TabIndex = 31;
+            this.lblID.Text = "ID";
             // 
-            // label1
+            // lblName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 122);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Name";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(9, 122);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(45, 17);
+            this.lblName.TabIndex = 30;
+            this.lblName.Text = "Name";
             // 
             // label21
             // 
@@ -362,13 +347,14 @@
             this.checkboxSafetyQuestion.TabIndex = 102;
             this.checkboxSafetyQuestion.Text = "Include a safety question.";
             this.checkboxSafetyQuestion.UseVisualStyleBackColor = true;
+            this.checkboxSafetyQuestion.CheckedChanged += new System.EventHandler(this.checkboxSafetyQuestion_CheckedChanged);
             // 
             // btnCycle
             // 
             this.btnCycle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCycle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCycle.BackgroundImage")));
             this.btnCycle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCycle.Location = new System.Drawing.Point(380, 381);
+            this.btnCycle.Location = new System.Drawing.Point(378, 381);
             this.btnCycle.Name = "btnCycle";
             this.btnCycle.Size = new System.Drawing.Size(29, 22);
             this.btnCycle.TabIndex = 103;
@@ -399,21 +385,20 @@
             // 
             // txtCaptcha
             // 
-            this.txtCaptcha.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCaptcha.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCaptcha.Enabled = false;
             this.txtCaptcha.Location = new System.Drawing.Point(207, 381);
             this.txtCaptcha.Name = "txtCaptcha";
-            this.txtCaptcha.ReadOnly = true;
             this.txtCaptcha.Size = new System.Drawing.Size(167, 22);
-            this.txtCaptcha.TabIndex = 36;
-            this.txtCaptcha.Text = "{random text}";
+            this.txtCaptcha.TabIndex = 106;
+            this.txtCaptcha.Text = "{random captcha}";
             this.txtCaptcha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FrmRegis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 500);
+            this.ClientSize = new System.Drawing.Size(562, 502);
+            this.Controls.Add(this.txtCaptcha);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.btnCycle);
@@ -422,13 +407,11 @@
             this.Controls.Add(this.Lbl_PassInfo);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.lblQestionMark);
             this.Controls.Add(this.txtAnswer);
             this.Controls.Add(this.txtQuestion);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.lblAnswer);
+            this.Controls.Add(this.lblQuestion);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtEmail);
@@ -442,16 +425,16 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtCaptchaAnswer);
-            this.Controls.Add(this.txtCaptcha);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblReType);
+            this.Controls.Add(this.lblPass);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.lblName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmRegis";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration Page";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -463,13 +446,11 @@
         private System.Windows.Forms.Label Lbl_PassInfo;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblQestionMark;
         private System.Windows.Forms.TextBox txtAnswer;
         private System.Windows.Forms.TextBox txtQuestion;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblAnswer;
+        private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.TextBox txtEmail;
@@ -484,11 +465,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCaptchaAnswer;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblReType;
+        private System.Windows.Forms.Label lblPass;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.CheckBox checkboxSafetyQuestion;
         private System.Windows.Forms.Button btnCycle;

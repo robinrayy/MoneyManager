@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace MoneyManager
 {
-    public partial class FrmLogin : Form
+    public partial class FrmGraph : Form
     {
-        public FrmLogin()
+        public FrmGraph()
         {
             InitializeComponent();
-        }
-
-        private void linklblSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Hide();
-            new FrmRegis().ShowDialog();
-            Show();
         }
     }
 }

@@ -21,5 +21,17 @@ namespace MoneyManager
         {
 
         }
+
+        private void reportGraphToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmMainMenu_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
+
+
 }
