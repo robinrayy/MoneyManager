@@ -78,6 +78,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(295, 22);
             this.txtId.TabIndex = 89;
+            this.txtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KeyPress);
             // 
             // txtPass
             // 
@@ -85,8 +86,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPass.Location = new System.Drawing.Point(111, 146);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(295, 22);
             this.txtPass.TabIndex = 90;
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // btnLogin
             // 
@@ -103,6 +106,7 @@
             this.btnLogin.TabIndex = 91;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnCancel
             // 

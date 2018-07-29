@@ -62,6 +62,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.txtCaptcha = new System.Windows.Forms.TextBox();
+            this.lblSampingEmail = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Lbl_PassInfo
@@ -178,6 +179,7 @@
             this.btnRegister.TabIndex = 12;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // txtEmail
             // 
@@ -187,6 +189,8 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(331, 22);
             this.txtEmail.TabIndex = 8;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtRetypePass
             // 
@@ -194,6 +198,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRetypePass.Location = new System.Drawing.Point(135, 209);
             this.txtRetypePass.Name = "txtRetypePass";
+            this.txtRetypePass.PasswordChar = '*';
             this.txtRetypePass.Size = new System.Drawing.Size(331, 22);
             this.txtRetypePass.TabIndex = 7;
             this.txtRetypePass.TextChanged += new System.EventHandler(this.txtRetypePass_TextChanged);
@@ -205,6 +210,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.Location = new System.Drawing.Point(135, 181);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(331, 22);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
@@ -404,11 +410,22 @@
             this.txtCaptcha.Text = "{random captcha}";
             this.txtCaptcha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // lblSampingEmail
+            // 
+            this.lblSampingEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSampingEmail.AutoSize = true;
+            this.lblSampingEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.lblSampingEmail.Location = new System.Drawing.Point(471, 239);
+            this.lblSampingEmail.Name = "lblSampingEmail";
+            this.lblSampingEmail.Size = new System.Drawing.Size(0, 17);
+            this.lblSampingEmail.TabIndex = 107;
+            // 
             // FrmRegis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(562, 502);
+            this.Controls.Add(this.lblSampingEmail);
             this.Controls.Add(this.txtCaptcha);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label20);
@@ -488,5 +505,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtCaptcha;
+        private System.Windows.Forms.Label lblSampingEmail;
     }
 }
