@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegis));
             this.Lbl_PassInfo = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblSampingID = new System.Windows.Forms.Label();
+            this.lblSampingPass = new System.Windows.Forms.Label();
             this.lblQestionMark = new System.Windows.Forms.Label();
             this.txtAnswer = new System.Windows.Forms.TextBox();
             this.txtQuestion = new System.Windows.Forms.TextBox();
@@ -76,27 +76,27 @@
             this.Lbl_PassInfo.Text = "Pass Wrong";
             this.Lbl_PassInfo.Visible = false;
             // 
-            // label18
+            // lblSampingID
             // 
-            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label18.AutoSize = true;
-            this.label18.ForeColor = System.Drawing.Color.DimGray;
-            this.label18.Location = new System.Drawing.Point(471, 155);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(79, 17);
-            this.label18.TabIndex = 58;
-            this.label18.Text = "*MIN 6 digit";
+            this.lblSampingID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSampingID.AutoSize = true;
+            this.lblSampingID.ForeColor = System.Drawing.Color.DimGray;
+            this.lblSampingID.Location = new System.Drawing.Point(471, 155);
+            this.lblSampingID.Name = "lblSampingID";
+            this.lblSampingID.Size = new System.Drawing.Size(79, 17);
+            this.lblSampingID.TabIndex = 58;
+            this.lblSampingID.Text = "*MIN 6 digit";
             // 
-            // label17
+            // lblSampingPass
             // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.Color.DimGray;
-            this.label17.Location = new System.Drawing.Point(471, 184);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(79, 17);
-            this.label17.TabIndex = 57;
-            this.label17.Text = "*MIN 6 digit";
+            this.lblSampingPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSampingPass.AutoSize = true;
+            this.lblSampingPass.ForeColor = System.Drawing.Color.DimGray;
+            this.lblSampingPass.Location = new System.Drawing.Point(471, 184);
+            this.lblSampingPass.Name = "lblSampingPass";
+            this.lblSampingPass.Size = new System.Drawing.Size(79, 17);
+            this.lblSampingPass.TabIndex = 57;
+            this.lblSampingPass.Text = "*MIN 6 digit";
             // 
             // lblQestionMark
             // 
@@ -118,7 +118,7 @@
             this.txtAnswer.Location = new System.Drawing.Point(135, 334);
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(395, 22);
-            this.txtAnswer.TabIndex = 55;
+            this.txtAnswer.TabIndex = 10;
             // 
             // txtQuestion
             // 
@@ -128,7 +128,7 @@
             this.txtQuestion.Location = new System.Drawing.Point(135, 307);
             this.txtQuestion.Name = "txtQuestion";
             this.txtQuestion.Size = new System.Drawing.Size(395, 22);
-            this.txtQuestion.TabIndex = 54;
+            this.txtQuestion.TabIndex = 9;
             // 
             // lblAnswer
             // 
@@ -161,9 +161,10 @@
             this.btnCancel.Location = new System.Drawing.Point(303, 462);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(71, 32);
-            this.btnCancel.TabIndex = 49;
+            this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // btnRegister
             // 
@@ -174,7 +175,7 @@
             this.btnRegister.Location = new System.Drawing.Point(207, 462);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(90, 32);
-            this.btnRegister.TabIndex = 48;
+            this.btnRegister.TabIndex = 12;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
             // 
@@ -185,7 +186,7 @@
             this.txtEmail.Location = new System.Drawing.Point(135, 236);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(331, 22);
-            this.txtEmail.TabIndex = 47;
+            this.txtEmail.TabIndex = 8;
             // 
             // txtRetypePass
             // 
@@ -194,7 +195,9 @@
             this.txtRetypePass.Location = new System.Drawing.Point(135, 209);
             this.txtRetypePass.Name = "txtRetypePass";
             this.txtRetypePass.Size = new System.Drawing.Size(331, 22);
-            this.txtRetypePass.TabIndex = 46;
+            this.txtRetypePass.TabIndex = 7;
+            this.txtRetypePass.TextChanged += new System.EventHandler(this.txtRetypePass_TextChanged);
+            this.txtRetypePass.Leave += new System.EventHandler(this.txtRetypePass_Leave);
             // 
             // txtPassword
             // 
@@ -203,7 +206,9 @@
             this.txtPassword.Location = new System.Drawing.Point(135, 181);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(331, 22);
-            this.txtPassword.TabIndex = 45;
+            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // txtId
             // 
@@ -212,7 +217,9 @@
             this.txtId.Location = new System.Drawing.Point(135, 152);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(331, 22);
-            this.txtId.TabIndex = 44;
+            this.txtId.TabIndex = 5;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
+            this.txtId.Leave += new System.EventHandler(this.txtId_Leave);
             // 
             // txtNama
             // 
@@ -221,7 +228,7 @@
             this.txtNama.Location = new System.Drawing.Point(135, 122);
             this.txtNama.Name = "txtNama";
             this.txtNama.Size = new System.Drawing.Size(331, 22);
-            this.txtNama.TabIndex = 43;
+            this.txtNama.TabIndex = 4;
             // 
             // label11
             // 
@@ -274,7 +281,7 @@
             this.txtCaptchaAnswer.Location = new System.Drawing.Point(207, 434);
             this.txtCaptchaAnswer.Name = "txtCaptchaAnswer";
             this.txtCaptchaAnswer.Size = new System.Drawing.Size(167, 22);
-            this.txtCaptchaAnswer.TabIndex = 37;
+            this.txtCaptchaAnswer.TabIndex = 11;
             // 
             // label6
             // 
@@ -389,6 +396,7 @@
             // txtCaptcha
             // 
             this.txtCaptcha.Enabled = false;
+            this.txtCaptcha.ForeColor = System.Drawing.Color.Black;
             this.txtCaptcha.Location = new System.Drawing.Point(207, 381);
             this.txtCaptcha.Name = "txtCaptcha";
             this.txtCaptcha.Size = new System.Drawing.Size(167, 22);
@@ -408,8 +416,8 @@
             this.Controls.Add(this.checkboxSafetyQuestion);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.Lbl_PassInfo);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
+            this.Controls.Add(this.lblSampingID);
+            this.Controls.Add(this.lblSampingPass);
             this.Controls.Add(this.lblQestionMark);
             this.Controls.Add(this.txtAnswer);
             this.Controls.Add(this.txtQuestion);
@@ -448,8 +456,8 @@
         #endregion
 
         private System.Windows.Forms.Label Lbl_PassInfo;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblSampingID;
+        private System.Windows.Forms.Label lblSampingPass;
         private System.Windows.Forms.Label lblQestionMark;
         private System.Windows.Forms.TextBox txtAnswer;
         private System.Windows.Forms.TextBox txtQuestion;
