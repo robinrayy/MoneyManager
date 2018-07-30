@@ -63,6 +63,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txtCaptcha = new System.Windows.Forms.TextBox();
             this.lblSampingEmail = new System.Windows.Forms.Label();
+            this.checkBoxShowPass = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // Lbl_PassInfo
@@ -105,7 +106,7 @@
             this.lblQestionMark.AutoSize = true;
             this.lblQestionMark.Enabled = false;
             this.lblQestionMark.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblQestionMark.Location = new System.Drawing.Point(533, 310);
+            this.lblQestionMark.Location = new System.Drawing.Point(533, 339);
             this.lblQestionMark.Name = "lblQestionMark";
             this.lblQestionMark.Size = new System.Drawing.Size(16, 17);
             this.lblQestionMark.TabIndex = 56;
@@ -116,7 +117,7 @@
             this.txtAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAnswer.Enabled = false;
-            this.txtAnswer.Location = new System.Drawing.Point(135, 334);
+            this.txtAnswer.Location = new System.Drawing.Point(135, 363);
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(394, 22);
             this.txtAnswer.TabIndex = 10;
@@ -126,7 +127,7 @@
             this.txtQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQuestion.Enabled = false;
-            this.txtQuestion.Location = new System.Drawing.Point(135, 307);
+            this.txtQuestion.Location = new System.Drawing.Point(135, 336);
             this.txtQuestion.Name = "txtQuestion";
             this.txtQuestion.Size = new System.Drawing.Size(394, 22);
             this.txtQuestion.TabIndex = 9;
@@ -136,7 +137,7 @@
             this.lblAnswer.AutoSize = true;
             this.lblAnswer.Enabled = false;
             this.lblAnswer.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblAnswer.Location = new System.Drawing.Point(9, 333);
+            this.lblAnswer.Location = new System.Drawing.Point(9, 362);
             this.lblAnswer.Name = "lblAnswer";
             this.lblAnswer.Size = new System.Drawing.Size(122, 17);
             this.lblAnswer.TabIndex = 51;
@@ -147,7 +148,7 @@
             this.lblQuestion.AutoSize = true;
             this.lblQuestion.Enabled = false;
             this.lblQuestion.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblQuestion.Location = new System.Drawing.Point(9, 306);
+            this.lblQuestion.Location = new System.Drawing.Point(9, 335);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(121, 17);
             this.lblQuestion.TabIndex = 50;
@@ -159,7 +160,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.Silver;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.Location = new System.Drawing.Point(302, 462);
+            this.btnCancel.Location = new System.Drawing.Point(302, 491);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(71, 32);
             this.btnCancel.TabIndex = 13;
@@ -173,7 +174,7 @@
             this.btnRegister.BackColor = System.Drawing.Color.Silver;
             this.btnRegister.FlatAppearance.BorderSize = 0;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegister.Location = new System.Drawing.Point(206, 462);
+            this.btnRegister.Location = new System.Drawing.Point(206, 491);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(90, 32);
             this.btnRegister.TabIndex = 12;
@@ -185,7 +186,7 @@
             // 
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.Location = new System.Drawing.Point(135, 236);
+            this.txtEmail.Location = new System.Drawing.Point(135, 265);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(330, 22);
             this.txtEmail.TabIndex = 8;
@@ -239,7 +240,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(117, 237);
+            this.label11.Location = new System.Drawing.Point(117, 266);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(12, 17);
             this.label11.TabIndex = 42;
@@ -284,7 +285,7 @@
             // txtCaptchaAnswer
             // 
             this.txtCaptchaAnswer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCaptchaAnswer.Location = new System.Drawing.Point(206, 434);
+            this.txtCaptchaAnswer.Location = new System.Drawing.Point(206, 463);
             this.txtCaptchaAnswer.Name = "txtCaptchaAnswer";
             this.txtCaptchaAnswer.Size = new System.Drawing.Size(167, 22);
             this.txtCaptchaAnswer.TabIndex = 11;
@@ -293,7 +294,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(203, 414);
+            this.label6.Location = new System.Drawing.Point(203, 443);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(152, 17);
             this.label6.TabIndex = 35;
@@ -302,7 +303,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(9, 236);
+            this.lblEmail.Location = new System.Drawing.Point(9, 265);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(42, 17);
             this.lblEmail.TabIndex = 34;
@@ -348,7 +349,7 @@
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(105, 384);
+            this.label21.Location = new System.Drawing.Point(105, 413);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(95, 17);
             this.label21.TabIndex = 101;
@@ -357,7 +358,7 @@
             // checkboxSafetyQuestion
             // 
             this.checkboxSafetyQuestion.AutoSize = true;
-            this.checkboxSafetyQuestion.Location = new System.Drawing.Point(11, 282);
+            this.checkboxSafetyQuestion.Location = new System.Drawing.Point(11, 311);
             this.checkboxSafetyQuestion.Name = "checkboxSafetyQuestion";
             this.checkboxSafetyQuestion.Size = new System.Drawing.Size(191, 21);
             this.checkboxSafetyQuestion.TabIndex = 102;
@@ -370,7 +371,7 @@
             this.btnCycle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCycle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCycle.BackgroundImage")));
             this.btnCycle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCycle.Location = new System.Drawing.Point(377, 381);
+            this.btnCycle.Location = new System.Drawing.Point(377, 410);
             this.btnCycle.Name = "btnCycle";
             this.btnCycle.Size = new System.Drawing.Size(29, 22);
             this.btnCycle.TabIndex = 103;
@@ -403,7 +404,7 @@
             // 
             this.txtCaptcha.Enabled = false;
             this.txtCaptcha.ForeColor = System.Drawing.Color.Black;
-            this.txtCaptcha.Location = new System.Drawing.Point(207, 381);
+            this.txtCaptcha.Location = new System.Drawing.Point(207, 410);
             this.txtCaptcha.Name = "txtCaptcha";
             this.txtCaptcha.Size = new System.Drawing.Size(167, 22);
             this.txtCaptcha.TabIndex = 106;
@@ -415,16 +416,28 @@
             this.lblSampingEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSampingEmail.AutoSize = true;
             this.lblSampingEmail.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSampingEmail.Location = new System.Drawing.Point(470, 239);
+            this.lblSampingEmail.Location = new System.Drawing.Point(470, 268);
             this.lblSampingEmail.Name = "lblSampingEmail";
             this.lblSampingEmail.Size = new System.Drawing.Size(0, 17);
             this.lblSampingEmail.TabIndex = 107;
+            // 
+            // checkBoxShowPass
+            // 
+            this.checkBoxShowPass.AutoSize = true;
+            this.checkBoxShowPass.Location = new System.Drawing.Point(135, 237);
+            this.checkBoxShowPass.Name = "checkBoxShowPass";
+            this.checkBoxShowPass.Size = new System.Drawing.Size(129, 21);
+            this.checkBoxShowPass.TabIndex = 108;
+            this.checkBoxShowPass.Text = "Show Password";
+            this.checkBoxShowPass.UseVisualStyleBackColor = true;
+            this.checkBoxShowPass.CheckedChanged += new System.EventHandler(this.checkBoxShowPass_CheckedChanged);
             // 
             // FrmRegis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 502);
+            this.ClientSize = new System.Drawing.Size(561, 530);
+            this.Controls.Add(this.checkBoxShowPass);
             this.Controls.Add(this.lblSampingEmail);
             this.Controls.Add(this.txtCaptcha);
             this.Controls.Add(this.label19);
@@ -506,5 +519,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtCaptcha;
         private System.Windows.Forms.Label lblSampingEmail;
+        private System.Windows.Forms.CheckBox checkBoxShowPass;
     }
 }

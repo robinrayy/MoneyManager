@@ -41,6 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.checkBoxShowPass = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -100,7 +101,7 @@
             this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogin.Location = new System.Drawing.Point(166, 176);
+            this.btnLogin.Location = new System.Drawing.Point(166, 204);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 91;
@@ -114,7 +115,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.Silver;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.Location = new System.Drawing.Point(247, 176);
+            this.btnCancel.Location = new System.Drawing.Point(247, 204);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(76, 23);
             this.btnCancel.TabIndex = 92;
@@ -128,7 +129,7 @@
             this.linklblSignUp.AutoSize = true;
             this.linklblSignUp.BackColor = System.Drawing.Color.Transparent;
             this.linklblSignUp.DisabledLinkColor = System.Drawing.Color.Transparent;
-            this.linklblSignUp.Location = new System.Drawing.Point(266, 207);
+            this.linklblSignUp.Location = new System.Drawing.Point(266, 235);
             this.linklblSignUp.Name = "linklblSignUp";
             this.linklblSignUp.Size = new System.Drawing.Size(60, 17);
             this.linklblSignUp.TabIndex = 93;
@@ -163,7 +164,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(146, 207);
+            this.label5.Location = new System.Drawing.Point(146, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 17);
             this.label5.TabIndex = 96;
@@ -191,11 +192,23 @@
             this.label7.Text = "Your Worthy Money Manager";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // checkBoxShowPass
+            // 
+            this.checkBoxShowPass.AutoSize = true;
+            this.checkBoxShowPass.Location = new System.Drawing.Point(111, 174);
+            this.checkBoxShowPass.Name = "checkBoxShowPass";
+            this.checkBoxShowPass.Size = new System.Drawing.Size(129, 21);
+            this.checkBoxShowPass.TabIndex = 109;
+            this.checkBoxShowPass.Text = "Show Password";
+            this.checkBoxShowPass.UseVisualStyleBackColor = true;
+            this.checkBoxShowPass.CheckedChanged += new System.EventHandler(this.checkBoxShowPass_CheckedChanged);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 240);
+            this.ClientSize = new System.Drawing.Size(535, 260);
+            this.Controls.Add(this.checkBoxShowPass);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -234,5 +247,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox checkBoxShowPass;
     }
 }

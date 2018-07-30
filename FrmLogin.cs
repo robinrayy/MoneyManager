@@ -91,5 +91,17 @@ namespace MoneyManager
             }
             
         }
+
+        private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxShowPass.Checked == true)
+            {
+                txtPass.PasswordChar = '\0';        
+            }
+            else
+            {
+                txtPass.PasswordChar = '*';
+            }
+        }
     }
 }

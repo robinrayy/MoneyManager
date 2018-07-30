@@ -268,6 +268,20 @@ namespace MoneyManager
                 btnCancel_Click_1(null,null);
             }
         }
+
+        private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxShowPass.Checked == true)
+            {
+                txtPassword.PasswordChar = '\0';
+                txtRetypePass.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+                txtRetypePass.PasswordChar = '*';
+            }
+        }
     }
 }
 

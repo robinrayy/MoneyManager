@@ -171,7 +171,7 @@
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(90, 46);
             this.btnRegister.TabIndex = 145;
-            this.btnRegister.Text = "Register";
+            this.btnRegister.Text = "Confirm Change";
             this.btnRegister.UseVisualStyleBackColor = false;
             // 
             // button1
