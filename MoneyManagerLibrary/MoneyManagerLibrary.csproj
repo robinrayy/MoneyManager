@@ -46,6 +46,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Transaction.cs" />
+    <Compile Include="TransactionDAO.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserDAO.cs" />
   </ItemGroup>

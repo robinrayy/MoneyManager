@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using MoneyManagerLibrary;
 
 namespace MoneyManager
 {
@@ -12,12 +13,12 @@ namespace MoneyManager
         double[] InCat = { 20_000_000, 10_000_000, 2_000_000, 2_000_000, 500_000, 1_000_000 };
         double[] ExCat = {1_000_000, 1_000_000, 1_000_000, 200_000, 500_000, 500_000, 1_000_000, 250_000,
                           100_000, 1_000_000, 2_500_000, 20_000_000, 10_000_000, 20_000_000, 1_000_000, 1_000_000};
+        User user = null;
 
-
-    public FrmAddTransaction()
+        public FrmAddTransaction(User ImportUser)
         {
             InitializeComponent();
-
+            user = ImportUser;
             // Category
             ComboB1.Add("<Select>");
             ComboB1.Add("Income");
@@ -108,20 +109,34 @@ namespace MoneyManager
         private void btnOk_Click(object sender, EventArgs e)
         {
             double amount = double.Parse(this.txtBoxAmount.Text.Trim('.'));
-            if (comboBox1.SelectedIndex == 1)
+            try
             {
-                if (amount > InCat[comboBox2.SelectedIndex])
+                if ((comboBox1.SelectedIndex == 1 && amount > InCat[comboBox2.SelectedIndex]) || (comboBox1.SelectedIndex == 2 && amount > ExCat[comboBox2.SelectedIndex]))
                 {
-                    MessageBox.Show("This amount seems to big for you! \n Proceed right away?", "Warning",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult x = MessageBox.Show("This amount seems to big for you! \n Proceed right away?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (x == DialogResult.Yes)
+                    {
+                        using (var transdao = new TransactionDAO())
+                        {
+                            transdao.Insert(new Transaction(dtpAdd.Value, comboBox1.Text, comboBox2.Text, amount, user.ID.ToString(), txtNote.Text));
+                        }
+                        MessageBox.Show("Transaction has been successfuly added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    using (var transdao = new TransactionDAO())
+                    {
+                        transdao.Insert(new Transaction(dtpAdd.Value, comboBox1.Text, comboBox2.Text, amount, user.ID.ToString(), txtNote.Text));
+                    }
+                    MessageBox.Show("Transaction has been successfuly added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else if (comboBox1.SelectedIndex == 2)
+            catch (Exception ex)
             {
-                if (amount > ExCat[comboBox2.SelectedIndex])
-                {
-                    MessageBox.Show("This amount seems to big for you! \n Proceed right away?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                }
+                throw ex;
             }
+
         }
 
         private void btnCncl_Click(object sender, EventArgs e)

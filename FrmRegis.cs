@@ -61,6 +61,16 @@ namespace MoneyManager
 
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
+            txtNama.Text = "";
+            txtId.Text = ""; lblSampingID.Text = "";
+            txtPassword.Text = ""; lblSampingPass.Text = "";
+            txtRetypePass.Text = ""; Lbl_PassInfo.Text = "";
+            txtEmail.Text = ""; lblSampingEmail.Text = "";
+            txtQuestion.Text = "";
+            txtAnswer.Text = "";
+            RandomCaptcha(6);
+            txtCaptchaAnswer.Text = "";
+            checkboxSafetyQuestion.Checked = false;
             this.Close();
         }
 
@@ -70,7 +80,10 @@ namespace MoneyManager
             {
                 if (txtId.TextLength < 6)
                 {
-                    MessageBox.Show("ID must be at least 6 characters", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ID must be at least 6 characters !", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }else if (txtId.TextLength > 20)
+                {
+                    MessageBox.Show("ID must not contain more than 20 characters ! ", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (txtId.Text.Contains(" "))
                 {
@@ -96,7 +109,7 @@ namespace MoneyManager
                 }
                 else
                 {
-                    if (txtId.TextLength < 6 || txtId.Text.Trim() == "" || txtId.Text.Contains(" "))
+                    if (txtId.TextLength < 6 || txtId.TextLength > 20|| txtId.Text.Trim() == "" || txtId.Text.Contains(" "))
                     {
                         lblSampingID.Text = "Invalid";
                         lblSampingID.ForeColor = Color.Red;
@@ -158,15 +171,6 @@ namespace MoneyManager
                 Lbl_PassInfo.Text = "Correct";
                 Lbl_PassInfo.Visible = true;
                 Lbl_PassInfo.ForeColor = Color.Green;
-            }
-        }
-
-        private void txtRetypePass_Leave(object sender, EventArgs e)
-        {
-            if (Lbl_PassInfo.Text == "Wrong")
-            {
-                MessageBox.Show("Password and ReType are not identical !", "Invalid ReType Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtRetypePass.Focus();
             }
         }
 
@@ -253,18 +257,9 @@ namespace MoneyManager
                 }
 
                 MessageBox.Show("Registration Successful !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                lblSampingEmail.Text = "";
+                
 
-                txtNama.Text = "";
-                txtId.Text = ""; lblSampingID.Text = "";
-                txtPassword.Text = ""; lblSampingPass.Text = "";
-                txtRetypePass.Text = ""; Lbl_PassInfo.Text = "";
-                txtEmail.Text = ""; lblSampingEmail.Text = "";
-                txtQuestion.Text = "";
-                txtAnswer.Text = "";
-                RandomCaptcha(6);
-                txtCaptchaAnswer.Text = "";
-                checkboxSafetyQuestion.Checked = false;
+                
                 btnCancel_Click_1(null,null);
             }
         }
@@ -280,6 +275,14 @@ namespace MoneyManager
             {
                 txtPassword.PasswordChar = '*';
                 txtRetypePass.PasswordChar = '*';
+            }
+        }
+
+        private void txtCaptchaAnswer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnRegister_Click(null, null);
             }
         }
     }

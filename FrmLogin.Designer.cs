@@ -129,7 +129,7 @@
             this.linklblSignUp.AutoSize = true;
             this.linklblSignUp.BackColor = System.Drawing.Color.Transparent;
             this.linklblSignUp.DisabledLinkColor = System.Drawing.Color.Transparent;
-            this.linklblSignUp.Location = new System.Drawing.Point(266, 235);
+            this.linklblSignUp.Location = new System.Drawing.Point(293, 234);
             this.linklblSignUp.Name = "linklblSignUp";
             this.linklblSignUp.Size = new System.Drawing.Size(60, 17);
             this.linklblSignUp.TabIndex = 93;
@@ -164,7 +164,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(146, 235);
+            this.label5.Location = new System.Drawing.Point(173, 234);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 17);
             this.label5.TabIndex = 96;

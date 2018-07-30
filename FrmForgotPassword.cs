@@ -204,5 +204,13 @@ namespace MoneyManager
                 throw ex;
             }
         }
+
+        private void txtAnswer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnEnter_Click(null, null);
+            }
+        }
     }
 }

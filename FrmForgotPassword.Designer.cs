@@ -86,6 +86,7 @@
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(342, 22);
             this.txtAnswer.TabIndex = 29;
+            this.txtAnswer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAnswer_KeyPress);
             // 
             // Lbl_Question
             // 

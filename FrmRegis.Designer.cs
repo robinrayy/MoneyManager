@@ -203,7 +203,6 @@
             this.txtRetypePass.Size = new System.Drawing.Size(330, 22);
             this.txtRetypePass.TabIndex = 7;
             this.txtRetypePass.TextChanged += new System.EventHandler(this.txtRetypePass_TextChanged);
-            this.txtRetypePass.Leave += new System.EventHandler(this.txtRetypePass_Leave);
             // 
             // txtPassword
             // 
@@ -222,6 +221,7 @@
             this.txtId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtId.Location = new System.Drawing.Point(135, 152);
+            this.txtId.MaxLength = 20;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(330, 22);
             this.txtId.TabIndex = 5;
@@ -289,6 +289,7 @@
             this.txtCaptchaAnswer.Name = "txtCaptchaAnswer";
             this.txtCaptchaAnswer.Size = new System.Drawing.Size(167, 22);
             this.txtCaptchaAnswer.TabIndex = 11;
+            this.txtCaptchaAnswer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCaptchaAnswer_KeyPress);
             // 
             // label6
             // 

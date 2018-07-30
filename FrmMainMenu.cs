@@ -14,11 +14,15 @@ namespace MoneyManager
     public partial class FrmMainMenu : Form
     {
         User user = null;
+        List<Transaction> TransactionList = null;
 
         public FrmMainMenu(User ImportedUser)
         {
             InitializeComponent();
             this.user = ImportedUser;
+            lblHello.Text += user.Nama.ToString();
+            dgvData.AutoGenerateColumns = false;
+            dgvData.DataSource = null;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -33,13 +37,26 @@ namespace MoneyManager
 
         private void FrmMainMenu_Load(object sender, EventArgs e)
         {
+            try
+            {
+                using (var transdao = new TransactionDAO())
+                {
+                    TransactionList = transdao.GetAllTransactionDataByID(user.ID.ToString());
+                }
+                dgvData.DataSource = TransactionList;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
             
         }
 
         private void expenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new FrmAddTransaction().ShowDialog();
+            new FrmAddTransaction(user).ShowDialog();
             this.Show();
         }
 

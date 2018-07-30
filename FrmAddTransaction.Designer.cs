@@ -39,7 +39,7 @@
             this.dtpAdd = new System.Windows.Forms.DateTimePicker();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnOk = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCncl = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.lblTextCount = new System.Windows.Forms.Label();
@@ -151,15 +151,15 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Rp.";
             // 
-            // btnOk
+            // btnConfirm
             // 
-            this.btnOk.Location = new System.Drawing.Point(163, 299);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 42);
-            this.btnOk.TabIndex = 11;
-            this.btnOk.Text = "Confirm";
-            this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            this.btnConfirm.Location = new System.Drawing.Point(163, 299);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(75, 42);
+            this.btnConfirm.TabIndex = 11;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCncl
             // 
@@ -207,7 +207,7 @@
             this.Controls.Add(this.lblTextCount);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnCncl);
-            this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtNote);
             this.Controls.Add(this.dtpAdd);
@@ -243,7 +243,7 @@
         private System.Windows.Forms.DateTimePicker dtpAdd;
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCncl;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblTextCount;
