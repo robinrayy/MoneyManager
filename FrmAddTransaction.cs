@@ -1,20 +1,138 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MoneyManager
 {
     public partial class FrmAddTransaction : Form
     {
-        public FrmAddTransaction()
+        List<string> ComboB1 = new List<string>();
+        List<string> ComboIncome = new List<string>();
+        List<string> ComboExpanse = new List<string>();
+        double[] InCat = { 20_000_000, 10_000_000, 2_000_000, 2_000_000, 500_000, 1_000_000 };
+        double[] ExCat = {1_000_000, 1_000_000, 1_000_000, 200_000, 500_000, 500_000, 1_000_000, 250_000,
+                          100_000, 1_000_000, 2_500_000, 20_000_000, 10_000_000, 20_000_000, 1_000_000, 1_000_000};
+
+
+    public FrmAddTransaction()
         {
             InitializeComponent();
+
+            // Category
+            ComboB1.Add("<Select>");
+            ComboB1.Add("Income");
+            ComboB1.Add("Expense");
+            comboBox1.DataSource = ComboB1;
+
+            // Income Category
+            ComboIncome.Add("Salary");
+            ComboIncome.Add("Award");
+            ComboIncome.Add("Interest Money");
+            ComboIncome.Add("Gifts");
+            ComboIncome.Add("Selling");
+            ComboIncome.Add("Miscellaneous");
+
+            // Expanse Category
+            ComboExpanse.Add("Friends & Lover");
+            ComboExpanse.Add("Food & Beverage");
+            ComboExpanse.Add("Bills & Utilities");
+            ComboExpanse.Add("Transportation");
+            ComboExpanse.Add("Shopping");
+            ComboExpanse.Add("Entertaintment");
+            ComboExpanse.Add("Travel");
+            ComboExpanse.Add("Health & Fitness");
+            ComboExpanse.Add("Gifts & Donation");
+            ComboExpanse.Add("Family");
+            ComboExpanse.Add("Education");
+            ComboExpanse.Add("Investment");
+            ComboExpanse.Add("Business");
+            ComboExpanse.Add("Insurance");
+            ComboExpanse.Add("Fees & Charges");
+            ComboExpanse.Add("Miscellaneous");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // ComboBox2 DataSource base on ComboBox1 DataSource
+            if (comboBox1.SelectedIndex.Equals(0))
+            {
+                comboBox2.DataSource = null;
+                comboBox2.Enabled = false;
+            }
+            else if (comboBox1.SelectedIndex.Equals(1))
+            {
+                comboBox2.DataSource = ComboIncome;
+                comboBox2.Enabled = true;
+            }
+            else if (comboBox1.SelectedIndex.Equals(2))
+            {
+                comboBox2.DataSource = ComboExpanse;
+                comboBox2.Enabled = true; ;
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Number Validation
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // Convert 1000 => 1.000
+                if (this.txtBoxAmount.Text.Trim() != "")
+                {
+                    if (double.TryParse(this.txtBoxAmount.Text, out double result))
+                    {
+                        this.txtBoxAmount.Text = result.ToString("n0");
+                        this.txtBoxAmount.SelectionStart = this.txtBoxAmount.Text.Length;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            double amount = double.Parse(this.txtBoxAmount.Text.Trim('.'));
+            if (comboBox1.SelectedIndex == 1)
+            {
+                if (amount > InCat[comboBox2.SelectedIndex])
+                {
+                    MessageBox.Show("This amount seems to big for you! \n Proceed right away?", "Warning",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                }
+            }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                if (amount > ExCat[comboBox2.SelectedIndex])
+                {
+                    MessageBox.Show("This amount seems to big for you! \n Proceed right away?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                }
+            }
+        }
+
+        private void btnCncl_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtNote_TextChanged(object sender, EventArgs e)
+        {
+            int count = txtNote.TextLength;
+            this.lblTextCount.Text = count.ToString();
         }
     }
 }
