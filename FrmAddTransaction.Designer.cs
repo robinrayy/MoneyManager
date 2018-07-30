@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -200,10 +201,8 @@
             this.label9.TabIndex = 15;
             this.label9.Text = ",00-";
             // 
-            // FrmAddTransaction
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
+
             this.ClientSize = new System.Drawing.Size(482, 353);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblTextCount);
@@ -228,6 +227,7 @@
             this.Text = "FrmAddTransaction";
             this.ResumeLayout(false);
             this.PerformLayout();
+
 
         }
 
