@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MoneyManagerLibrary;
 
 namespace MoneyManager
 {
     public partial class FrmMainMenu : Form
     {
-        public FrmMainMenu()
+        User user = null;
+
+        public FrmMainMenu(User ImportedUser)
         {
             InitializeComponent();
+            this.user = ImportedUser;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

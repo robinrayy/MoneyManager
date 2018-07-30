@@ -43,13 +43,15 @@ namespace MoneyManager
             {
                 using (var userdao = new UserDAO())
                 {
-                    User login = userdao.GetUserDataByID(txtId.Text);
-                    if (login != null)
+                    User user = userdao.GetUserDataByID(txtId.Text);
+                    if (user != null)
                     {
-                        if (login.Password.ToString() == txtPass.Text)
+                        if (user.Password.ToString() == txtPass.Text)
                         {
-                            MessageBox.Show("Login Success !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //MessageBox.Show("Login Success !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
                             userdao.Dispose();
+                            new FrmMainMenu(user).ShowDialog();
                         }
                         else
                         {
@@ -69,7 +71,6 @@ namespace MoneyManager
             }
             catch (Exception ex)
             {
-
                 throw ex; 
             }   
         }

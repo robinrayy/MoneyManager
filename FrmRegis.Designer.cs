@@ -70,7 +70,7 @@
             this.Lbl_PassInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_PassInfo.AutoSize = true;
             this.Lbl_PassInfo.ForeColor = System.Drawing.Color.Red;
-            this.Lbl_PassInfo.Location = new System.Drawing.Point(471, 212);
+            this.Lbl_PassInfo.Location = new System.Drawing.Point(470, 212);
             this.Lbl_PassInfo.Name = "Lbl_PassInfo";
             this.Lbl_PassInfo.Size = new System.Drawing.Size(85, 17);
             this.Lbl_PassInfo.TabIndex = 59;
@@ -82,7 +82,7 @@
             this.lblSampingID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSampingID.AutoSize = true;
             this.lblSampingID.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSampingID.Location = new System.Drawing.Point(471, 155);
+            this.lblSampingID.Location = new System.Drawing.Point(470, 155);
             this.lblSampingID.Name = "lblSampingID";
             this.lblSampingID.Size = new System.Drawing.Size(79, 17);
             this.lblSampingID.TabIndex = 58;
@@ -93,7 +93,7 @@
             this.lblSampingPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSampingPass.AutoSize = true;
             this.lblSampingPass.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSampingPass.Location = new System.Drawing.Point(471, 184);
+            this.lblSampingPass.Location = new System.Drawing.Point(470, 184);
             this.lblSampingPass.Name = "lblSampingPass";
             this.lblSampingPass.Size = new System.Drawing.Size(79, 17);
             this.lblSampingPass.TabIndex = 57;
@@ -105,7 +105,7 @@
             this.lblQestionMark.AutoSize = true;
             this.lblQestionMark.Enabled = false;
             this.lblQestionMark.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblQestionMark.Location = new System.Drawing.Point(534, 310);
+            this.lblQestionMark.Location = new System.Drawing.Point(533, 310);
             this.lblQestionMark.Name = "lblQestionMark";
             this.lblQestionMark.Size = new System.Drawing.Size(16, 17);
             this.lblQestionMark.TabIndex = 56;
@@ -118,7 +118,7 @@
             this.txtAnswer.Enabled = false;
             this.txtAnswer.Location = new System.Drawing.Point(135, 334);
             this.txtAnswer.Name = "txtAnswer";
-            this.txtAnswer.Size = new System.Drawing.Size(395, 22);
+            this.txtAnswer.Size = new System.Drawing.Size(394, 22);
             this.txtAnswer.TabIndex = 10;
             // 
             // txtQuestion
@@ -128,7 +128,7 @@
             this.txtQuestion.Enabled = false;
             this.txtQuestion.Location = new System.Drawing.Point(135, 307);
             this.txtQuestion.Name = "txtQuestion";
-            this.txtQuestion.Size = new System.Drawing.Size(395, 22);
+            this.txtQuestion.Size = new System.Drawing.Size(394, 22);
             this.txtQuestion.TabIndex = 9;
             // 
             // lblAnswer
@@ -159,7 +159,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.Silver;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.Location = new System.Drawing.Point(303, 462);
+            this.btnCancel.Location = new System.Drawing.Point(302, 462);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(71, 32);
             this.btnCancel.TabIndex = 13;
@@ -173,7 +173,7 @@
             this.btnRegister.BackColor = System.Drawing.Color.Silver;
             this.btnRegister.FlatAppearance.BorderSize = 0;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegister.Location = new System.Drawing.Point(207, 462);
+            this.btnRegister.Location = new System.Drawing.Point(206, 462);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(90, 32);
             this.btnRegister.TabIndex = 12;
@@ -187,7 +187,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Location = new System.Drawing.Point(135, 236);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(331, 22);
+            this.txtEmail.Size = new System.Drawing.Size(330, 22);
             this.txtEmail.TabIndex = 8;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
@@ -199,7 +199,7 @@
             this.txtRetypePass.Location = new System.Drawing.Point(135, 209);
             this.txtRetypePass.Name = "txtRetypePass";
             this.txtRetypePass.PasswordChar = '*';
-            this.txtRetypePass.Size = new System.Drawing.Size(331, 22);
+            this.txtRetypePass.Size = new System.Drawing.Size(330, 22);
             this.txtRetypePass.TabIndex = 7;
             this.txtRetypePass.TextChanged += new System.EventHandler(this.txtRetypePass_TextChanged);
             this.txtRetypePass.Leave += new System.EventHandler(this.txtRetypePass_Leave);
@@ -211,7 +211,7 @@
             this.txtPassword.Location = new System.Drawing.Point(135, 181);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(331, 22);
+            this.txtPassword.Size = new System.Drawing.Size(330, 22);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
@@ -222,7 +222,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtId.Location = new System.Drawing.Point(135, 152);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(331, 22);
+            this.txtId.Size = new System.Drawing.Size(330, 22);
             this.txtId.TabIndex = 5;
             this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             this.txtId.Leave += new System.EventHandler(this.txtId_Leave);
@@ -233,7 +233,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNama.Location = new System.Drawing.Point(135, 122);
             this.txtNama.Name = "txtNama";
-            this.txtNama.Size = new System.Drawing.Size(331, 22);
+            this.txtNama.Size = new System.Drawing.Size(330, 22);
             this.txtNama.TabIndex = 4;
             // 
             // label11
@@ -284,7 +284,7 @@
             // txtCaptchaAnswer
             // 
             this.txtCaptchaAnswer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCaptchaAnswer.Location = new System.Drawing.Point(207, 434);
+            this.txtCaptchaAnswer.Location = new System.Drawing.Point(206, 434);
             this.txtCaptchaAnswer.Name = "txtCaptchaAnswer";
             this.txtCaptchaAnswer.Size = new System.Drawing.Size(167, 22);
             this.txtCaptchaAnswer.TabIndex = 11;
@@ -293,7 +293,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(204, 414);
+            this.label6.Location = new System.Drawing.Point(203, 414);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(152, 17);
             this.label6.TabIndex = 35;
@@ -348,7 +348,7 @@
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(106, 384);
+            this.label21.Location = new System.Drawing.Point(105, 384);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(95, 17);
             this.label21.TabIndex = 101;
@@ -370,7 +370,7 @@
             this.btnCycle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCycle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCycle.BackgroundImage")));
             this.btnCycle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCycle.Location = new System.Drawing.Point(378, 381);
+            this.btnCycle.Location = new System.Drawing.Point(377, 381);
             this.btnCycle.Name = "btnCycle";
             this.btnCycle.Size = new System.Drawing.Size(29, 22);
             this.btnCycle.TabIndex = 103;
@@ -383,7 +383,7 @@
             this.label19.Font = new System.Drawing.Font("Ravie", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(0, 81);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(562, 19);
+            this.label19.Size = new System.Drawing.Size(561, 19);
             this.label19.TabIndex = 105;
             this.label19.Text = "Your Worthy Money Manager";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -394,7 +394,7 @@
             this.label20.Font = new System.Drawing.Font("Ravie", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(0, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(562, 81);
+            this.label20.Size = new System.Drawing.Size(561, 81);
             this.label20.TabIndex = 104;
             this.label20.Text = "E&&I";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -415,7 +415,7 @@
             this.lblSampingEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSampingEmail.AutoSize = true;
             this.lblSampingEmail.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSampingEmail.Location = new System.Drawing.Point(471, 239);
+            this.lblSampingEmail.Location = new System.Drawing.Point(470, 239);
             this.lblSampingEmail.Name = "lblSampingEmail";
             this.lblSampingEmail.Size = new System.Drawing.Size(0, 17);
             this.lblSampingEmail.TabIndex = 107;
@@ -424,7 +424,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 502);
+            this.ClientSize = new System.Drawing.Size(561, 502);
             this.Controls.Add(this.lblSampingEmail);
             this.Controls.Add(this.txtCaptcha);
             this.Controls.Add(this.label19);

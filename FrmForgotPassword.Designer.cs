@@ -43,6 +43,8 @@
             this.radioButtonID = new System.Windows.Forms.RadioButton();
             this.lblEmailDesc = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblSampingEmail = new System.Windows.Forms.Label();
+            this.lblSampingID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -59,6 +61,7 @@
             this.btnCancel.TabIndex = 31;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnEnter
             // 
@@ -74,13 +77,14 @@
             this.btnEnter.TabIndex = 30;
             this.btnEnter.Text = "Enter";
             this.btnEnter.UseVisualStyleBackColor = false;
+            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
             // txtAnswer
             // 
             this.txtAnswer.Enabled = false;
             this.txtAnswer.Location = new System.Drawing.Point(96, 217);
             this.txtAnswer.Name = "txtAnswer";
-            this.txtAnswer.Size = new System.Drawing.Size(310, 22);
+            this.txtAnswer.Size = new System.Drawing.Size(342, 22);
             this.txtAnswer.TabIndex = 29;
             // 
             // Lbl_Question
@@ -98,18 +102,21 @@
             this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(95, 172);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(234, 22);
+            this.txtID.Size = new System.Drawing.Size(235, 22);
             this.txtID.TabIndex = 33;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
+            this.txtID.Leave += new System.EventHandler(this.txtID_Leave);
             // 
             // lblQuestion
             // 
             this.lblQuestion.AutoSize = true;
             this.lblQuestion.Enabled = false;
-            this.lblQuestion.Location = new System.Drawing.Point(85, 197);
+            this.lblQuestion.Location = new System.Drawing.Point(95, 197);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(177, 17);
             this.lblQuestion.TabIndex = 35;
             this.lblQuestion.Text = " {question that were typed}";
+            this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblAnswer
             // 
@@ -203,12 +210,33 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(234, 22);
             this.txtEmail.TabIndex = 43;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
+            // 
+            // lblSampingEmail
+            // 
+            this.lblSampingEmail.AutoSize = true;
+            this.lblSampingEmail.Location = new System.Drawing.Point(337, 70);
+            this.lblSampingEmail.Name = "lblSampingEmail";
+            this.lblSampingEmail.Size = new System.Drawing.Size(0, 17);
+            this.lblSampingEmail.TabIndex = 44;
+            // 
+            // lblSampingID
+            // 
+            this.lblSampingID.AutoSize = true;
+            this.lblSampingID.Location = new System.Drawing.Point(337, 176);
+            this.lblSampingID.Name = "lblSampingID";
+            this.lblSampingID.Size = new System.Drawing.Size(0, 17);
+            this.lblSampingID.TabIndex = 45;
+            this.lblSampingID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmForgotPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 306);
+            this.ClientSize = new System.Drawing.Size(450, 306);
+            this.Controls.Add(this.lblSampingID);
+            this.Controls.Add(this.lblSampingEmail);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.radioButtonID);
             this.Controls.Add(this.radioButtonEmail);
@@ -251,5 +279,7 @@
         private System.Windows.Forms.RadioButton radioButtonID;
         private System.Windows.Forms.Label lblEmailDesc;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblSampingEmail;
+        private System.Windows.Forms.Label lblSampingID;
     }
 }

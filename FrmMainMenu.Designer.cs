@@ -84,13 +84,13 @@
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.expenseToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(112, 26);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // expenseToolStripMenuItem
             // 
             this.expenseToolStripMenuItem.Name = "expenseToolStripMenuItem";
-            this.expenseToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.expenseToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.expenseToolStripMenuItem.Text = "Transaction";
             // 
             // accountToolStripMenuItem

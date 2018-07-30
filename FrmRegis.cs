@@ -180,28 +180,40 @@ namespace MoneyManager
 
         private void txtEmail_Leave(object sender, EventArgs e)
         {
-            if (lblSampingEmail.Text == "Invalid")
+            using (var userdao = new UserDAO())
             {
-                MessageBox.Show("Please type a valid email !", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtEmail.Focus();
+                if (lblSampingEmail.Text == "Invalid")
+                {
+                    if (userdao.GetUserDataByEmail(this.txtEmail.Text) != null)
+                    {
+                        MessageBox.Show("This email has been used by another account !", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please type a valid email !", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    txtEmail.Focus();
+                }
             }
+            
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-
-            if (!EmailIsValid(this.txtEmail.Text))
+            using (var userdao = new UserDAO())
             {
-                lblSampingEmail.Text = "Invalid";
-                lblSampingEmail.ForeColor = Color.Red;
-            }
+                if (!EmailIsValid(this.txtEmail.Text) || userdao.GetUserDataByEmail(this.txtEmail.Text) != null)
+                {
+                    lblSampingEmail.Text = "Invalid";
+                    lblSampingEmail.ForeColor = Color.Red;
+                }
 
-            else
-            {
-                lblSampingEmail.Text = "Valid";
-                lblSampingEmail.ForeColor = Color.Green;
-            }
-
+                else
+                {
+                    lblSampingEmail.Text = "Valid";
+                    lblSampingEmail.ForeColor = Color.Green;
+                }
+            }  
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -220,9 +232,19 @@ namespace MoneyManager
                 {
                     using (var userdao = new UserDAO())
                     {
-                        userdao.Insert(
+                        if (checkboxSafetyQuestion.Checked == true)
+                        {
+                            userdao.Insert(
                             new User(txtId.Text.Trim(), txtNama.Text.Trim(), txtPassword.Text.Trim(), txtEmail.Text.Trim(), txtQuestion.Text.Trim(), txtAnswer.Text.Trim())
                             );
+                        }
+                        else
+                        {
+                            userdao.Insert(
+                            new User(txtId.Text.Trim(), txtNama.Text.Trim(), txtPassword.Text.Trim(), txtEmail.Text.Trim())
+                            );
+                        }
+                        
                     }
                 }
                 catch (Exception ex)
@@ -243,7 +265,7 @@ namespace MoneyManager
                 RandomCaptcha(6);
                 txtCaptchaAnswer.Text = "";
                 checkboxSafetyQuestion.Checked = false;
-                txtNama.Focus();
+                btnCancel_Click_1(null,null);
             }
         }
     }

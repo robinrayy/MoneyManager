@@ -132,6 +132,38 @@ namespace MoneyManagerLibrary
             return result;
         }
 
+        public User GetUserDataByEmail(string email)
+        {
+            User result = null;
+            try
+            {
+                string sqlString = @"select * from usermm where email = @email";
+                using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@email", email);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            result = new User
+                            (reader["ID"].ToString(),
+                                reader["name"].ToString(),
+                                reader["password"].ToString(),
+                                reader["email"].ToString(),
+                                reader["question"]?.ToString(),
+                                reader["answer"]?.ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
+
         public void Dispose()
         {
             if (conn != null)
