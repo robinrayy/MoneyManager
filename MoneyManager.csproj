@@ -82,7 +82,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddController.cs" />
     <Compile Include="FrmAddTransaction.cs">
       <SubType>Form</SubType>
     </Compile>
