@@ -86,7 +86,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(195, 231);
+            this.textBox3.Location = new System.Drawing.Point(195, 234);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(247, 22);
             this.textBox3.TabIndex = 5;
@@ -116,9 +116,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(195, 276);
+            this.btnSave.Location = new System.Drawing.Point(176, 276);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 44);
+            this.btnSave.Size = new System.Drawing.Size(94, 44);
             this.btnSave.TabIndex = 63;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -127,7 +127,7 @@
             // 
             this.btnCancel.Location = new System.Drawing.Point(280, 276);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 44);
+            this.btnCancel.Size = new System.Drawing.Size(98, 44);
             this.btnCancel.TabIndex = 64;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;

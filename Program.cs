@@ -16,7 +16,7 @@ namespace MoneyManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmAddTransaction());
+            Application.Run(new FrmLogin());
         }
     }
 }

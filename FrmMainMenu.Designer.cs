@@ -38,7 +38,7 @@
             this.reportGraphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.balanceChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -92,6 +92,7 @@
             this.expenseToolStripMenuItem.Name = "expenseToolStripMenuItem";
             this.expenseToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.expenseToolStripMenuItem.Text = "Transaction";
+            this.expenseToolStripMenuItem.Click += new System.EventHandler(this.expenseToolStripMenuItem_Click);
             // 
             // accountToolStripMenuItem
             // 
@@ -104,8 +105,9 @@
             // manageProfileToolStripMenuItem
             // 
             this.manageProfileToolStripMenuItem.Name = "manageProfileToolStripMenuItem";
-            this.manageProfileToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.manageProfileToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.manageProfileToolStripMenuItem.Text = "Manage Profile";
+            this.manageProfileToolStripMenuItem.Click += new System.EventHandler(this.manageProfileToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -138,7 +140,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnLogOut);
             this.splitContainer1.Panel1.Controls.Add(this.btnDelete);
             this.splitContainer1.Panel1.Controls.Add(this.btnEdit);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
@@ -153,19 +155,20 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(873, 514);
-            this.splitContainer1.SplitterDistance = 153;
+            this.splitContainer1.Size = new System.Drawing.Size(873, 526);
+            this.splitContainer1.SplitterDistance = 165;
             this.splitContainer1.TabIndex = 1;
             // 
-            // button1
+            // btnLogOut
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(763, 87);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 36);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Log Out";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogOut.Location = new System.Drawing.Point(763, 87);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(98, 36);
+            this.btnLogOut.TabIndex = 12;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnDelete
             // 
@@ -190,6 +193,7 @@
             // comboBox1
             // 
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(212, 126);
             this.comboBox1.Name = "comboBox1";
@@ -199,19 +203,21 @@
             // radioButton1
             // 
             this.radioButton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.radioButton1.ForeColor = System.Drawing.Color.Gray;
             this.radioButton1.Location = new System.Drawing.Point(109, 126);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(103, 27);
+            this.radioButton1.Size = new System.Drawing.Size(103, 39);
             this.radioButton1.TabIndex = 9;
             this.radioButton1.Text = "By Month : ";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 126);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 27);
+            this.label1.Size = new System.Drawing.Size(109, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "Filter Methods : ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -219,16 +225,19 @@
             // radioButton2
             // 
             this.radioButton2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.radioButton2.ForeColor = System.Drawing.Color.Gray;
             this.radioButton2.Location = new System.Drawing.Point(515, 126);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(158, 27);
+            this.radioButton2.Size = new System.Drawing.Size(158, 39);
             this.radioButton2.TabIndex = 7;
             this.radioButton2.Text = "By Specified Date : ";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(673, 126);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
@@ -278,14 +287,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 542);
+            this.ClientSize = new System.Drawing.Size(873, 554);
+            this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "FrmMainMenu";
-            this.Text = "FrmMainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.FrmMainMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -322,6 +333,6 @@
         private System.Windows.Forms.ToolStripMenuItem balanceChartToolStripMenuItem;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

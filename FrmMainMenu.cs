@@ -35,6 +35,66 @@ namespace MoneyManager
         {
             
         }
+
+        private void expenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FrmAddTransaction().ShowDialog();
+            this.Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            
+            DialogResult dialog = MessageBox.Show("Are you sure ?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (dialog == DialogResult.Yes)
+            {
+                this.Hide();
+                new FrmLogin().ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                //back to menu
+            }
+            
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked == true)
+            {
+                comboBox1.Enabled = true;
+                radioButton1.ForeColor = Color.Black;
+            }
+            else
+            {
+                comboBox1.Enabled = false;
+                radioButton1.ForeColor = Color.Gray;
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked == true)
+            {
+                dateTimePicker1.Enabled = true;
+                radioButton2.ForeColor = Color.Black;
+            }
+            else
+            {
+                dateTimePicker1.Enabled = false;
+                radioButton2.ForeColor = Color.Gray;
+            }
+        }
+
+        private void manageProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FrmManageProfile().ShowDialog();
+            this.Show();
+        }
     }
 
 

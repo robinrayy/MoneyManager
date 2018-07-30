@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.incomeChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.expenseChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.incomeChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.incomeChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expenseChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incomeChart)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -63,7 +63,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btnBack);
             this.splitContainer1.Size = new System.Drawing.Size(986, 556);
-            this.splitContainer1.SplitterDistance = 504;
+            this.splitContainer1.SplitterDistance = 503;
             this.splitContainer1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -78,52 +78,52 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(986, 504);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(986, 503);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // incomeChart
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.incomeChart.ChartAreas.Add(chartArea3);
-            this.incomeChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.incomeChart.Legends.Add(legend3);
-            this.incomeChart.Location = new System.Drawing.Point(3, 3);
-            this.incomeChart.Name = "incomeChart";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.incomeChart.Series.Add(series3);
-            this.incomeChart.Size = new System.Drawing.Size(487, 498);
-            this.incomeChart.TabIndex = 0;
-            this.incomeChart.Text = "HALO";
             // 
             // expenseChart
             // 
-            chartArea4.Name = "ChartArea1";
-            this.expenseChart.ChartAreas.Add(chartArea4);
+            chartArea1.Name = "ChartArea1";
+            this.expenseChart.ChartAreas.Add(chartArea1);
             this.expenseChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.expenseChart.Legends.Add(legend4);
+            legend1.Name = "Legend1";
+            this.expenseChart.Legends.Add(legend1);
             this.expenseChart.Location = new System.Drawing.Point(496, 3);
             this.expenseChart.Name = "expenseChart";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            series4.YValuesPerPoint = 4;
-            this.expenseChart.Series.Add(series4);
-            this.expenseChart.Size = new System.Drawing.Size(487, 498);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 4;
+            this.expenseChart.Series.Add(series1);
+            this.expenseChart.Size = new System.Drawing.Size(487, 497);
             this.expenseChart.TabIndex = 1;
             this.expenseChart.Text = "chart2";
+            // 
+            // incomeChart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.incomeChart.ChartAreas.Add(chartArea2);
+            this.incomeChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.incomeChart.Legends.Add(legend2);
+            this.incomeChart.Location = new System.Drawing.Point(3, 3);
+            this.incomeChart.Name = "incomeChart";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.incomeChart.Series.Add(series2);
+            this.incomeChart.Size = new System.Drawing.Size(487, 497);
+            this.incomeChart.TabIndex = 0;
+            this.incomeChart.Text = "HALO";
             // 
             // btnBack
             // 
             this.btnBack.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnBack.Location = new System.Drawing.Point(911, 0);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 48);
+            this.btnBack.Size = new System.Drawing.Size(75, 49);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -134,15 +134,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 556);
             this.Controls.Add(this.splitContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmGraph";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Expense & Income Graph";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.incomeChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expenseChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incomeChart)).EndInit();
             this.ResumeLayout(false);
 
         }

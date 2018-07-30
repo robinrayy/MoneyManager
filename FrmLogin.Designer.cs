@@ -101,7 +101,7 @@
             this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogin.Location = new System.Drawing.Point(166, 204);
+            this.btnLogin.Location = new System.Drawing.Point(188, 204);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 91;
@@ -115,7 +115,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.Silver;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.Location = new System.Drawing.Point(247, 204);
+            this.btnCancel.Location = new System.Drawing.Point(269, 204);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(76, 23);
             this.btnCancel.TabIndex = 92;
