@@ -106,6 +106,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "<select Category>"});
@@ -117,6 +118,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Enabled = false;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(272, 102);
@@ -126,6 +128,7 @@
             // 
             // dtpAdd
             // 
+            this.dtpAdd.Enabled = false;
             this.dtpAdd.Location = new System.Drawing.Point(136, 132);
             this.dtpAdd.Name = "dtpAdd";
             this.dtpAdd.Size = new System.Drawing.Size(257, 22);
@@ -225,6 +228,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddTransaction";
+            this.Load += new System.EventHandler(this.FrmAddTransaction_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

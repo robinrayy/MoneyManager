@@ -50,7 +50,7 @@ namespace MoneyManagerLibrary
                         double amount = Double.Parse(reader["amount"].ToString());
                         string note = reader["note"]?.ToString();
                         string Id = reader["ID"]?.ToString();
-                        list.Add(new Transaction(date, cat, sub, amount, Id, note));
+                        list.Add(new Transaction(date, cat, sub, amount, note, Id));
                     }
                 }
                 reader.Close();

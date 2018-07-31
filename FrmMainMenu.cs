@@ -15,6 +15,9 @@ namespace MoneyManager
     {
         User user = null;
         List<Transaction> TransactionList = null;
+        List<string> ComboCat = new List<string>();
+        List<string> ComboIncome = new List<string>();
+        List<string> ComboExpense = new List<string>();
 
         public FrmMainMenu(User ImportedUser)
         {
@@ -22,7 +25,40 @@ namespace MoneyManager
             this.user = ImportedUser;
             lblHello.Text += user.Nama.ToString();
             dgvData.AutoGenerateColumns = false;
+            dgvData.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
             dgvData.DataSource = null;
+
+            // Category
+            ComboCat.Add("<Select>");
+            ComboCat.Add("Income");
+            ComboCat.Add("Expense");
+            coBoxCategory.DataSource = ComboCat;
+
+            // Income Category
+            ComboIncome.Add("Salary");
+            ComboIncome.Add("Award");
+            ComboIncome.Add("Interest Money");
+            ComboIncome.Add("Gifts");
+            ComboIncome.Add("Selling");
+            ComboIncome.Add("Miscellaneous");
+
+            // Expanse Category
+            ComboExpense.Add("Friends & Lover");
+            ComboExpense.Add("Food & Beverage");
+            ComboExpense.Add("Bills & Utilities");
+            ComboExpense.Add("Transportation");
+            ComboExpense.Add("Shopping");
+            ComboExpense.Add("Entertaintment");
+            ComboExpense.Add("Travel");
+            ComboExpense.Add("Health & Fitness");
+            ComboExpense.Add("Gifts & Donation");
+            ComboExpense.Add("Family");
+            ComboExpense.Add("Education");
+            ComboExpense.Add("Investment");
+            ComboExpense.Add("Business");
+            ComboExpense.Add("Insurance");
+            ComboExpense.Add("Fees & Charges");
+            ComboExpense.Add("Miscellaneous");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,6 +73,8 @@ namespace MoneyManager
 
         private void FrmMainMenu_Load(object sender, EventArgs e)
         {
+            double totalIncome = 0, totalExpense = 0;
+
             try
             {
                 using (var transdao = new TransactionDAO())
@@ -44,6 +82,26 @@ namespace MoneyManager
                     TransactionList = transdao.GetAllTransactionDataByID(user.ID.ToString());
                 }
                 dgvData.DataSource = TransactionList;
+                this.dgvData.Columns[0].DataPropertyName = "Date";
+                this.dgvData.Columns[1].DataPropertyName = "Category";
+                this.dgvData.Columns[2].DataPropertyName = "SubCategory";
+                this.dgvData.Columns[3].DataPropertyName = "Amount";
+                this.dgvData.Columns[4].DataPropertyName = "Note";
+
+                foreach (var item in TransactionList)
+                {
+                    if (item.Category.ToString() == "Income")
+                    {
+                        totalIncome += item.Amount;
+                    }
+                    else if (item.Category.ToString() == "Expense")
+                    {
+                        totalExpense += item.Amount;
+                    }
+                }
+                lblIncome.Text += "Rp. " + totalIncome.ToString() + ",00-";
+                lblExpense.Text += "Rp. " + totalExpense.ToString() + ",00-";
+                lblTotal.Text += "Rp. " + (totalIncome -totalExpense).ToString() + ",00-";
             }
             catch (Exception ex)
             {
@@ -56,7 +114,7 @@ namespace MoneyManager
         private void expenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new FrmAddTransaction(user).ShowDialog();
+            new FrmAddTransaction(user,ComboIncome,ComboExpense).ShowDialog();
             this.Show();
         }
 
@@ -78,39 +136,100 @@ namespace MoneyManager
             
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void radButMonth_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton1.Checked == true)
+            if (radioButMonth.Checked == true)
             {
-                comboBox1.Enabled = true;
-                radioButton1.ForeColor = Color.Black;
+                coBoxMonth.Enabled = true;
+                radioButMonth.ForeColor = Color.Black;
             }
             else
             {
-                comboBox1.Enabled = false;
-                radioButton1.ForeColor = Color.Gray;
+                coBoxMonth.Enabled = false;
+                radioButMonth.ForeColor = Color.Gray;
+            }
+        }
+        private void radioButSpecDate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButSpecDate.Checked == true)
+            {
+                dtpSpecDate.Enabled = true;
+                radioButSpecDate.ForeColor = Color.Black;
+            }
+            else
+            {
+                dtpSpecDate.Enabled = false;
+                radioButSpecDate.ForeColor = Color.Gray;
             }
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton2.Checked == true)
-            {
-                dateTimePicker1.Enabled = true;
-                radioButton2.ForeColor = Color.Black;
-            }
-            else
-            {
-                dateTimePicker1.Enabled = false;
-                radioButton2.ForeColor = Color.Gray;
-            }
-        }
 
         private void manageProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             new FrmManageProfile().ShowDialog();
             this.Show();
+        }
+
+        private void FrmMainMenu_Resize(object sender, EventArgs e)
+        {
+            this.dgvData.Columns[0].Width = 15 * this.dgvData.Width / 100;
+            this.dgvData.Columns[1].Width = 15 * this.dgvData.Width / 100;
+            this.dgvData.Columns[2].Width = 15 * this.dgvData.Width / 100;
+            this.dgvData.Columns[3].Width = 15 * this.dgvData.Width / 100;
+            this.dgvData.Columns[4].Width = 40 * this.dgvData.Width / 100;
+        }
+
+
+        private void checkBoxCategory_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxCategory.Checked == true)
+            {
+                checkBoxCategory.ForeColor = Color.Black;
+                coBoxCategory.Enabled = true;
+            }
+            else if (checkBoxCategory.Checked == false)
+            {
+                checkBoxCategory.ForeColor = Color.Gray;
+                coBoxCategory.Enabled = false;
+                checkBoxSubCat.Checked = false;
+            }
+        }
+
+        private void checkBoxSubCat_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxSubCat.Checked == true)
+            {
+                checkBoxCategory.Checked = true;
+                checkBoxSubCat.ForeColor = Color.Black;
+                coBoxSubCat.Enabled = true;
+            }
+            else
+            {
+                checkBoxSubCat.ForeColor = Color.Gray;
+                coBoxSubCat.Enabled = false;
+            }
+
+
+        }
+
+        private void coBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (coBoxCategory.SelectedIndex.Equals(0))
+            {
+                coBoxSubCat.DataSource = null;
+
+            }
+            else if (coBoxCategory.SelectedIndex.Equals(1))
+            {
+                coBoxSubCat.DataSource = ComboIncome;
+           
+            }
+            else if (coBoxCategory.SelectedIndex.Equals(2))
+            {
+                coBoxSubCat.DataSource = ComboExpense;
+                
+            }
         }
     }
 

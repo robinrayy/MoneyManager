@@ -8,14 +8,14 @@ namespace MoneyManager
     public partial class FrmAddTransaction : Form
     {
         List<string> ComboB1 = new List<string>();
-        List<string> ComboIncome = new List<string>();
-        List<string> ComboExpanse = new List<string>();
+        List<string> ComboIncome = null;
+        List<string> ComboExpense = null;
         double[] InCat = { 20_000_000, 10_000_000, 2_000_000, 2_000_000, 500_000, 1_000_000 };
         double[] ExCat = {1_000_000, 1_000_000, 1_000_000, 200_000, 500_000, 500_000, 1_000_000, 250_000,
                           100_000, 1_000_000, 2_500_000, 20_000_000, 10_000_000, 20_000_000, 1_000_000, 1_000_000};
         User user = null;
 
-        public FrmAddTransaction(User ImportUser)
+        public FrmAddTransaction(User ImportUser, List<string> comboin, List<string> comboex)
         {
             InitializeComponent();
             user = ImportUser;
@@ -24,32 +24,9 @@ namespace MoneyManager
             ComboB1.Add("Income");
             ComboB1.Add("Expense");
             comboBox1.DataSource = ComboB1;
-
-            // Income Category
-            ComboIncome.Add("Salary");
-            ComboIncome.Add("Award");
-            ComboIncome.Add("Interest Money");
-            ComboIncome.Add("Gifts");
-            ComboIncome.Add("Selling");
-            ComboIncome.Add("Miscellaneous");
-
-            // Expanse Category
-            ComboExpanse.Add("Friends & Lover");
-            ComboExpanse.Add("Food & Beverage");
-            ComboExpanse.Add("Bills & Utilities");
-            ComboExpanse.Add("Transportation");
-            ComboExpanse.Add("Shopping");
-            ComboExpanse.Add("Entertaintment");
-            ComboExpanse.Add("Travel");
-            ComboExpanse.Add("Health & Fitness");
-            ComboExpanse.Add("Gifts & Donation");
-            ComboExpanse.Add("Family");
-            ComboExpanse.Add("Education");
-            ComboExpanse.Add("Investment");
-            ComboExpanse.Add("Business");
-            ComboExpanse.Add("Insurance");
-            ComboExpanse.Add("Fees & Charges");
-            ComboExpanse.Add("Miscellaneous");
+            ComboIncome = comboin;
+            ComboExpense = comboex;
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,7 +44,7 @@ namespace MoneyManager
             }
             else if (comboBox1.SelectedIndex.Equals(2))
             {
-                comboBox2.DataSource = ComboExpanse;
+                comboBox2.DataSource = ComboExpense;
                 comboBox2.Enabled = true; ;
             }
         }
@@ -148,6 +125,11 @@ namespace MoneyManager
         {
             int count = txtNote.TextLength;
             this.lblTextCount.Text = count.ToString();
+        }
+
+        private void FrmAddTransaction_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
