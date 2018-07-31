@@ -95,7 +95,7 @@ namespace MoneyManager
                     {
                         using (var transdao = new TransactionDAO())
                         {
-                            transdao.Insert(new Transaction(dtpAdd.Value, comboBox1.Text, comboBox2.Text, amount, user.ID.ToString(), txtNote.Text));
+                            transdao.Insert(new Transaction(dtpAdd.Value, comboBox1.Text, comboBox2.Text, amount,  txtNote.Text,user.ID.ToString()));
                         }
                         MessageBox.Show("Transaction has been successfuly added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -104,10 +104,12 @@ namespace MoneyManager
                 {
                     using (var transdao = new TransactionDAO())
                     {
-                        transdao.Insert(new Transaction(dtpAdd.Value, comboBox1.Text, comboBox2.Text, amount, user.ID.ToString(), txtNote.Text));
+                        transdao.Insert(new Transaction(dtpAdd.Value, comboBox1.Text, comboBox2.Text, amount,  txtNote.Text,user.ID.ToString()));
                     }
                     MessageBox.Show("Transaction has been successfuly added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
+                this.Close();
             }
             catch (Exception ex)
             {

@@ -68,7 +68,9 @@ namespace MoneyManager
 
         private void reportGraphToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new FrmGraph(user, ComboIncome, ComboExpense).ShowDialog();
+            this.Show();
         }
 
         private void FrmMainMenu_Load(object sender, EventArgs e)
@@ -99,9 +101,9 @@ namespace MoneyManager
                         totalExpense += item.Amount;
                     }
                 }
-                lblIncome.Text += "Rp. " + totalIncome.ToString() + ",00-";
-                lblExpense.Text += "Rp. " + totalExpense.ToString() + ",00-";
-                lblTotal.Text += "Rp. " + (totalIncome -totalExpense).ToString() + ",00-";
+                lblIncome.Text =  "Income   :  Rp. " + totalIncome.ToString() + ",00-";
+                lblExpense.Text = "Expense  :  Rp. " + totalExpense.ToString() + ",00-";
+                lblTotal.Text = "Account Balance : Rp. " + (totalIncome -totalExpense).ToString() + ",00-";
             }
             catch (Exception ex)
             {
@@ -230,6 +232,21 @@ namespace MoneyManager
                 coBoxSubCat.DataSource = ComboExpense;
                 
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            FrmMainMenu_Load(null,null);
+        }
+
+        private void dtpSpecDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void coBoxMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
