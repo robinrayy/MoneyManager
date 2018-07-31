@@ -93,7 +93,7 @@
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Expanse";
             series1.YValuesPerPoint = 4;
             this.expenseChart.Series.Add(series1);
             this.expenseChart.Size = new System.Drawing.Size(487, 497);
@@ -110,13 +110,12 @@
             this.incomeChart.Location = new System.Drawing.Point(3, 3);
             this.incomeChart.Name = "incomeChart";
             series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
+            series2.Name = "Income";
             this.incomeChart.Series.Add(series2);
             this.incomeChart.Size = new System.Drawing.Size(487, 497);
             this.incomeChart.TabIndex = 0;
-            this.incomeChart.Text = "HALO";
             // 
             // btnBack
             // 
@@ -139,6 +138,7 @@
             this.Name = "FrmGraph";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Expense & Income Graph";
+            this.Load += new System.EventHandler(this.FrmGraph_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
