@@ -38,6 +38,7 @@
             this.reportGraphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.balanceChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.checkBoxSubCat = new System.Windows.Forms.CheckBox();
             this.checkBoxCategory = new System.Windows.Forms.CheckBox();
             this.coBoxCategory = new System.Windows.Forms.ComboBox();
@@ -151,6 +152,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnRefresh);
             this.splitContainer1.Panel1.Controls.Add(this.checkBoxSubCat);
             this.splitContainer1.Panel1.Controls.Add(this.checkBoxCategory);
             this.splitContainer1.Panel1.Controls.Add(this.coBoxCategory);
@@ -173,6 +175,17 @@
             this.splitContainer1.Size = new System.Drawing.Size(1187, 836);
             this.splitContainer1.SplitterDistance = 216;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Location = new System.Drawing.Point(1077, 122);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(98, 36);
+            this.btnRefresh.TabIndex = 23;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // checkBoxSubCat
             // 
@@ -227,6 +240,7 @@
             this.dtpSpecDate.Name = "dtpSpecDate";
             this.dtpSpecDate.Size = new System.Drawing.Size(169, 22);
             this.dtpSpecDate.TabIndex = 17;
+            this.dtpSpecDate.ValueChanged += new System.EventHandler(this.dtpSpecDate_ValueChanged);
             // 
             // coBoxSubCat
             // 
@@ -282,15 +296,16 @@
             this.coBoxMonth.Name = "coBoxMonth";
             this.coBoxMonth.Size = new System.Drawing.Size(169, 24);
             this.coBoxMonth.TabIndex = 10;
+            this.coBoxMonth.SelectedIndexChanged += new System.EventHandler(this.coBoxMonth_SelectedIndexChanged);
             // 
             // radioButMonth
             // 
             this.radioButMonth.ForeColor = System.Drawing.Color.Gray;
             this.radioButMonth.Location = new System.Drawing.Point(108, 129);
             this.radioButMonth.Name = "radioButMonth";
-            this.radioButMonth.Size = new System.Drawing.Size(120, 24);
+            this.radioButMonth.Size = new System.Drawing.Size(158, 24);
             this.radioButMonth.TabIndex = 9;
-            this.radioButMonth.Text = "By Month     : ";
+            this.radioButMonth.Text = "By Month              : ";
             this.radioButMonth.UseVisualStyleBackColor = true;
             this.radioButMonth.CheckedChanged += new System.EventHandler(this.radButMonth_CheckedChanged);
             // 
@@ -458,5 +473,6 @@
         private System.Windows.Forms.ComboBox coBoxCategory;
         private System.Windows.Forms.CheckBox checkBoxSubCat;
         private System.Windows.Forms.CheckBox checkBoxCategory;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
