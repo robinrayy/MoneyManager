@@ -102,7 +102,7 @@
             this.incomeChart.Name = "incomeChart";
             this.incomeChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series2.Legend = "Legend1";
             series2.Name = "Income";
             this.incomeChart.Series.Add(series2);
@@ -185,7 +185,7 @@
             this.expenseChart.Location = new System.Drawing.Point(575, 3);
             this.expenseChart.Name = "expenseChart";
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Expense";
             this.expenseChart.Series.Add(series1);

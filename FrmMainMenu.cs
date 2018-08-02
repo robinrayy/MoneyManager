@@ -18,21 +18,24 @@ namespace MoneyManager
         List<string> ComboCat = new List<string>();
         List<string> ComboIncome = new List<string>();
         List<string> ComboExpense = new List<string>();
+        List<TransactionHeader> listNonDetail = null;
 
         public FrmMainMenu(User ImportedUser)
         {
             InitializeComponent();
+
             this.user = ImportedUser;
             lblHello.Text += user.Nama.ToString();
             dgvData.AutoGenerateColumns = false;
             dgvData.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
+            dgvData.Columns["Income"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvData.Columns["Expense"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvData.DataSource = null;
 
             // Category
-            ComboCat.Add("<Select>");
+            ComboCat.Add("<select>");
             ComboCat.Add("Income");
             ComboCat.Add("Expense");
-            coBoxCategory.DataSource = ComboCat;
 
             // Income Category
             ComboIncome.Add("Salary");
@@ -61,11 +64,6 @@ namespace MoneyManager
             ComboExpense.Add("Miscellaneous");
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void reportGraphToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -75,54 +73,61 @@ namespace MoneyManager
 
         private void FrmMainMenu_Load(object sender, EventArgs e)
         {
+
             double totalIncome = 0, totalExpense = 0;
+            double thisMonthIncome = 0, thisMonthExpense = 0;
 
             try
             {
                 using (var transdao = new TransactionDAO())
                 {
                     TransactionList = transdao.GetAllTransactionDataByID(user.ID.ToString());
+                    
+                    listNonDetail = transdao.GetAllTransactionHeaderByID(user.ID.ToString());
                 }
-                dgvData.DataSource = TransactionList;
-                this.dgvData.Columns[0].DataPropertyName = "Date";
-                this.dgvData.Columns[1].DataPropertyName = "Category";
-                this.dgvData.Columns[2].DataPropertyName = "SubCategory";
-                this.dgvData.Columns[3].DataPropertyName = "Amount";
-                this.dgvData.Columns[4].DataPropertyName = "Note";
 
-                foreach (var item in TransactionList)
+                
+                
+                foreach (var item in listNonDetail)
                 {
-                    if (item.Category.ToString() == "Income")
+                    if (item.Date.Month == DateTime.Today.Month)
                     {
-                        totalIncome += item.Amount;
+                        thisMonthIncome += item.Income;
+                        thisMonthExpense += item.Expense;
                     }
-                    else if (item.Category.ToString() == "Expense")
-                    {
-                        totalExpense += item.Amount;
-                    }
+                    totalIncome += item.Income;
+                    totalExpense += item.Expense;
                 }
-                lblIncome.Text =  "Income   :  Rp. " + totalIncome.ToString() + ",00-";
-                lblExpense.Text = "Expense  :  Rp. " + totalExpense.ToString() + ",00-";
-                lblTotal.Text = "Account Balance : Rp. " + (totalIncome -totalExpense).ToString() + ",00-";
+
+                
+                lblIncome.Text =  "Income   :  Rp. " + thisMonthIncome.ToString("n0") + ",00-";
+                lblExpense.Text = "Expense  :  Rp. " + thisMonthExpense.ToString("n0") + ",00-";
+                lblTotal.Text = "Account Balance : Rp. " + (totalIncome - totalExpense).ToString("n0") + ",00-";
+
+                coBoxMonth.SelectedIndex = 1;
+                coBoxMonth.SelectedIndex = 0;
+                this.dgvData.Columns[0].DataPropertyName = "Date";
+                this.dgvData.Columns[1].DataPropertyName = "Income";
+                this.dgvData.Columns[2].DataPropertyName = "Expense";
+
+
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            
-            
         }
 
         private void expenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new FrmAddTransaction(user,ComboIncome,ComboExpense).ShowDialog();
+            new FrmAddTransaction(user, ComboIncome, ComboExpense).ShowDialog();
             this.Show();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            
+
             DialogResult dialog = MessageBox.Show("Are you sure ?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
             if (dialog == DialogResult.Yes)
@@ -135,36 +140,8 @@ namespace MoneyManager
             {
                 //back to menu
             }
-            
-        }
 
-        private void radButMonth_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButMonth.Checked == true)
-            {
-                coBoxMonth.Enabled = true;
-                radioButMonth.ForeColor = Color.Black;
-            }
-            else
-            {
-                coBoxMonth.Enabled = false;
-                radioButMonth.ForeColor = Color.Gray;
-            }
         }
-        private void radioButSpecDate_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButSpecDate.Checked == true)
-            {
-                dtpSpecDate.Enabled = true;
-                radioButSpecDate.ForeColor = Color.Black;
-            }
-            else
-            {
-                dtpSpecDate.Enabled = false;
-                radioButSpecDate.ForeColor = Color.Gray;
-            }
-        }
-
 
         private void manageProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -176,77 +153,43 @@ namespace MoneyManager
         private void FrmMainMenu_Resize(object sender, EventArgs e)
         {
             this.dgvData.Columns[0].Width = 15 * this.dgvData.Width / 100;
-            this.dgvData.Columns[1].Width = 15 * this.dgvData.Width / 100;
-            this.dgvData.Columns[2].Width = 15 * this.dgvData.Width / 100;
-            this.dgvData.Columns[3].Width = 15 * this.dgvData.Width / 100;
-            this.dgvData.Columns[4].Width = 40 * this.dgvData.Width / 100;
-        }
-
-
-        private void checkBoxCategory_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxCategory.Checked == true)
-            {
-                checkBoxCategory.ForeColor = Color.Black;
-                coBoxCategory.Enabled = true;
-            }
-            else if (checkBoxCategory.Checked == false)
-            {
-                checkBoxCategory.ForeColor = Color.Gray;
-                coBoxCategory.Enabled = false;
-                checkBoxSubCat.Checked = false;
-            }
-        }
-
-        private void checkBoxSubCat_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxSubCat.Checked == true)
-            {
-                checkBoxCategory.Checked = true;
-                checkBoxSubCat.ForeColor = Color.Black;
-                coBoxSubCat.Enabled = true;
-            }
-            else
-            {
-                checkBoxSubCat.ForeColor = Color.Gray;
-                coBoxSubCat.Enabled = false;
-            }
-
-
-        }
-
-        private void coBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (coBoxCategory.SelectedIndex.Equals(0))
-            {
-                coBoxSubCat.DataSource = null;
-
-            }
-            else if (coBoxCategory.SelectedIndex.Equals(1))
-            {
-                coBoxSubCat.DataSource = ComboIncome;
-           
-            }
-            else if (coBoxCategory.SelectedIndex.Equals(2))
-            {
-                coBoxSubCat.DataSource = ComboExpense;
-                
-            }
+            this.dgvData.Columns[1].Width = 20 * this.dgvData.Width / 100;
+            this.dgvData.Columns[2].Width = 20 * this.dgvData.Width / 100;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            FrmMainMenu_Load(null,null);
-        }
-
-        private void dtpSpecDate_ValueChanged(object sender, EventArgs e)
-        {
-
+            coBoxMonth.SelectedIndex = 0;
+            FrmMainMenu_Load(null, null);
         }
 
         private void coBoxMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
+            List<TransactionHeader> listfilter = new List<TransactionHeader>();
 
+            dgvData.DataSource = null;
+
+            foreach (var item in listNonDetail)
+            {
+                if (coBoxMonth.SelectedIndex == 0 && item.Date.Month == DateTime.Today.Month) listfilter.Add(item);
+
+                else if (coBoxMonth.SelectedIndex == 1 && item.Date.Month == DateTime.Today.Month - 1) listfilter.Add(item);
+
+                else if (coBoxMonth.SelectedIndex == 2 && item.Date.Month == DateTime.Today.Month - 2) listfilter.Add(item);
+            }
+
+            dgvData.DataSource = listfilter;
+
+        }
+
+        private void dgvData_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dgvData.CurrentCell.ColumnIndex == 0)
+            {
+                this.Hide();
+                new FrmDetailTransaksi(user, DateTime.Parse(dgvData.CurrentCell.Value.ToString()).ToLongDateString(), ComboCat,ComboIncome,ComboExpense).ShowDialog();
+                this.Show();
+            }
         }
     }
 

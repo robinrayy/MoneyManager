@@ -48,6 +48,7 @@
     </Compile>
     <Compile Include="Transaction.cs" />
     <Compile Include="TransactionDAO.cs" />
+    <Compile Include="TransactionHeader.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserDAO.cs" />
   </ItemGroup>

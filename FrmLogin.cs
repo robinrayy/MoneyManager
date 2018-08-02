@@ -52,17 +52,18 @@ namespace MoneyManager
                             this.Hide();
                             userdao.Dispose();
                             new FrmMainMenu(user).ShowDialog();
+                            this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("Wrong Password !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Invalid ID or password !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                             txtPass.Clear();
                             txtPass.Focus();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Invalid ID !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Invalid ID or password !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtId.Clear();
                         txtPass.Clear();
                         txtId.Focus();
