@@ -125,26 +125,26 @@ namespace MoneyManager
             }
         }
 
-        private void txtPassword_Leave(object sender, EventArgs e)
-        {
-            if (lblSampingPass.Text == "Invalid")
-            {
-                if (txtPassword.Text.Contains(" "))
-                {
-                    MessageBox.Show("Password must NOT contain spaces", "Invalid Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Password must be at least 6 characters", "Invalid Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                txtPassword.Focus();
-            }
-        }
-
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-
-            if (txtPassword.TextLength < 6 || txtPassword.Text.Trim() == "" || txtPassword.Text.Contains(" "))
+            if (txtRetypePass.Text != txtPassword.Text)
+            {
+                Lbl_PassInfo.Text = "Wrong";
+                Lbl_PassInfo.Visible = true;
+                Lbl_PassInfo.ForeColor = Color.Red;
+            }
+            else if (txtRetypePass.Text == txtPassword.Text)
+            {
+                Lbl_PassInfo.Text = "Correct";
+                Lbl_PassInfo.Visible = true;
+                Lbl_PassInfo.ForeColor = Color.Green;
+            }
+            if (txtPassword.Text == "")
+            {
+                lblSampingPass.Text = "";
+            }
+            
+            else if (txtPassword.TextLength < 6 || txtPassword.Text.Trim() == "" || txtPassword.Text.Contains(" "))
             {
                 lblSampingPass.Text = "Invalid";
                 lblSampingPass.ForeColor = Color.Red;
@@ -159,19 +159,29 @@ namespace MoneyManager
 
         private void txtRetypePass_TextChanged(object sender, EventArgs e)
         {
-            if (txtRetypePass.Text != txtPassword.Text)
+            if (txtRetypePass.Text.Trim() == "" || txtRetypePass.Text.Contains(" "))
             {
-
-                Lbl_PassInfo.Text = "Wrong";
+                Lbl_PassInfo.Text = "Invalid";
                 Lbl_PassInfo.Visible = true;
                 Lbl_PassInfo.ForeColor = Color.Red;
             }
             else
             {
-                Lbl_PassInfo.Text = "Correct";
-                Lbl_PassInfo.Visible = true;
-                Lbl_PassInfo.ForeColor = Color.Green;
+                if (txtRetypePass.Text != txtPassword.Text)
+                {
+
+                    Lbl_PassInfo.Text = "Wrong";
+                    Lbl_PassInfo.Visible = true;
+                    Lbl_PassInfo.ForeColor = Color.Red;
+                }
+                else
+                {
+                    Lbl_PassInfo.Text = "Correct";
+                    Lbl_PassInfo.Visible = true;
+                    Lbl_PassInfo.ForeColor = Color.Green;
+                }
             }
+            
         }
 
         private bool EmailIsValid(string emailAddr)
@@ -230,24 +240,25 @@ namespace MoneyManager
             {
                 MessageBox.Show("Wrong Captcha", "Captcha", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else if (txtPassword.Text.Contains(" ") || txtRetypePass.Text.Contains(" "))
+            {
+                MessageBox.Show("Passwords must not contain spaces, retype your password !", "Captcha", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (txtPassword.Text != txtRetypePass.Text)
+            {
+                MessageBox.Show("Password's not the same", "Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
             else
             {
                 try
                 {
                     using (var userdao = new UserDAO())
                     {
-                        if (checkboxSafetyQuestion.Checked == true)
-                        {
+                        
                             userdao.Insert(
                             new User(txtId.Text.Trim(), txtNama.Text.Trim(), txtPassword.Text.Trim(), txtEmail.Text.Trim(), txtQuestion.Text.Trim(), txtAnswer.Text.Trim())
                             );
-                        }
-                        else
-                        {
-                            userdao.Insert(
-                            new User(txtId.Text.Trim(), txtNama.Text.Trim(), txtPassword.Text.Trim(), txtEmail.Text.Trim())
-                            );
-                        }
                         
                     }
                 }
@@ -284,6 +295,11 @@ namespace MoneyManager
             {
                 btnRegister_Click(null, null);
             }
+        }
+
+        private void txtRetypePass_Leave(object sender, EventArgs e)
+        {
+            txtPassword_TextChanged(null,null);
         }
     }
 }

@@ -203,6 +203,7 @@
             this.txtRetypePass.Size = new System.Drawing.Size(330, 22);
             this.txtRetypePass.TabIndex = 7;
             this.txtRetypePass.TextChanged += new System.EventHandler(this.txtRetypePass_TextChanged);
+            this.txtRetypePass.Leave += new System.EventHandler(this.txtRetypePass_Leave);
             // 
             // txtPassword
             // 
@@ -214,7 +215,6 @@
             this.txtPassword.Size = new System.Drawing.Size(330, 22);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
-            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // txtId
             // 

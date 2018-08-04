@@ -57,14 +57,9 @@ namespace MoneyManagerLibrary
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error : " + ex.Message);
-                Console.ReadKey();
-                throw;
+                throw ex;
             }
-            finally
-            {
-                if (conn != null) conn.Close();
-            }
+           
 
             return list;
         }
